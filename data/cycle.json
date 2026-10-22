@@ -1,0 +1,159 @@
+{
+ "generated": "2026-10-19T12:00+00:00",
+ "seed": true,
+ "source": "Manual snapshot of October 19, 2026 (BLS, BEA, FOMC and FRED figures gathered by hand)",
+ "seedNote": "This is the hand-gathered reading from October 19, 2026. The daily FRED update replaces it, and adds the full history from 1990, on its first run.",
+ "latest": {
+  "position": 53.8,
+  "phase": "L",
+  "counts": {
+   "E": 0,
+   "M": 3,
+   "L": 5,
+   "C": 0
+  },
+  "reporting": 8,
+  "indicators": [
+   {
+    "id": "ur",
+    "name": "Unemployment rate",
+    "series": "UNRATE",
+    "rule": "Up 0.5 pt or more from its 12-month low: Contraction. Up 0.2 pt: Late. Falling from 5% or above: Early. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/UNRATE",
+    "period": "September 2026",
+    "value": 4.2,
+    "display": "4.2%",
+    "context": "12-month low 4.1% \u00b7 Sahm rule 0.00",
+    "vote": "M"
+   },
+   {
+    "id": "payrolls",
+    "name": "Payroll growth, 3-month average",
+    "series": "PAYEMS",
+    "rule": "Below 0: Contraction. Below +75k a month: Late. Below +250k: Mid. Otherwise Early.",
+    "url": "https://fred.stlouisfed.org/series/PAYEMS",
+    "period": "September 2026",
+    "value": 29,
+    "display": "+29k",
+    "context": "single month, not the 3-month average",
+    "vote": "L"
+   },
+   {
+    "id": "claims",
+    "name": "Initial jobless claims, 4-week average",
+    "series": "ICSA",
+    "rule": "30% or more above its 52-week low: Contraction. 15% above: Late. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/ICSA",
+    "period": "October 2026"
+   },
+   {
+    "id": "cfnai",
+    "name": "Chicago Fed National Activity Index, 3-month average",
+    "series": "CFNAIMA3",
+    "rule": "At or below -0.70: Contraction. Below -0.35: Late. Above +0.20 within a year of a reading at or below -0.70: Early. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/CFNAIMA3",
+    "period": "September 2026"
+   },
+   {
+    "id": "cpi",
+    "name": "CPI inflation, year over year",
+    "series": "CPIAUCSL",
+    "rule": "3% or above and higher than 3 months earlier: Late. 2.5% or below and falling: Early. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+    "period": "September 2026",
+    "value": 3.7,
+    "display": "3.7%",
+    "context": "prior month 3.4% \u00b7 core 2.6%",
+    "vote": "L"
+   },
+   {
+    "id": "fed",
+    "name": "Fed funds target, upper bound",
+    "series": "DFEDTARU",
+    "rule": "Higher than 3 months earlier: Late. Lower: Early. Unchanged: Mid.",
+    "url": "https://fred.stlouisfed.org/series/DFEDTARU",
+    "period": "October 2026",
+    "value": 4.0,
+    "display": "4.00%",
+    "context": "hiked from 3.75% on Sept 16",
+    "vote": "L"
+   },
+   {
+    "id": "curve",
+    "name": "Yield curve, 10-year minus 3-month",
+    "series": "T10Y3M",
+    "rule": "Inverted: Late. Positive but inverted at some point in the past 6 months: Contraction. Above +150 bp: Early. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/T10Y3M",
+    "period": "October 6, 2026",
+    "value": 1.06,
+    "display": "+106 bp",
+    "context": "",
+    "vote": "M"
+   },
+   {
+    "id": "gdp",
+    "name": "Real GDP growth, annualized",
+    "series": "A191RL1Q225SBEA",
+    "rule": "Below 0: Contraction. Below 1%: Late. Below 3%: Mid. Otherwise Early.",
+    "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA",
+    "period": "Q2 2026",
+    "value": 1.5,
+    "display": "1.5%",
+    "context": "prior quarter 2.1%",
+    "vote": "M"
+   },
+   {
+    "id": "realyield",
+    "name": "10-year real yield (TIPS)",
+    "series": "DFII10",
+    "rule": "2.5% or above: Late. 0.5% or below: Early. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/DFII10",
+    "period": "October 6, 2026",
+    "value": 2.95,
+    "display": "2.95%",
+    "context": "nominal 10-year 5.31%",
+    "vote": "L"
+   },
+   {
+    "id": "oil",
+    "name": "Brent crude, change over 12 months",
+    "series": "DCOILBRENTEU",
+    "rule": "Up 40% or more: Late. Down 30% or more: Contraction. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
+    "period": "September 2026",
+    "value": 60,
+    "display": "+60%",
+    "context": "year-to-date move to about $114, not 12-month",
+    "vote": "L"
+   },
+   {
+    "id": "profits",
+    "name": "Corporate profits after tax, year over year",
+    "series": "CP",
+    "rule": "Below 0: Contraction. Below 5%: Late. Otherwise Mid.",
+    "url": "https://fred.stlouisfed.org/series/CP",
+    "period": "Q2 2026"
+   }
+  ],
+  "asOf": "2026-10-19"
+ },
+ "history": [],
+ "recessions": [
+  [
+   "1990-07",
+   "1991-03"
+  ],
+  [
+   "2001-03",
+   "2001-11"
+  ],
+  [
+   "2007-12",
+   "2009-06"
+  ],
+  [
+   "2020-02",
+   "2020-04"
+  ]
+ ]
+}
