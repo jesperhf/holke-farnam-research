@@ -54,4 +54,4 @@ Then open http://localhost:8000.
 
 - Cycle indicators come from FRED. The ISM manufacturing index is not on FRED and is licensed, so the tracker uses the Chicago Fed National Activity Index instead.
 - The history line uses today's revised data aligned to the month measured, so it reads cleaner than what was known in real time.
-- Prices come from Stooq's free quote download. SK hynix trades in Seoul and is not covered, so add it by hand in `data/prices.json` as `"skh": {"price": 1250000, "date": "2026-11-02", "manual": true}`. Entries marked manual are kept by the daily job.
+- Prices come from Yahoo Finance's public chart data, with Stooq as a fallback. Any symbol that fails is listed under `errors` in `data/prices.json`. To set a price by hand, add `"manual": true` to its entry and the daily job will keep it.

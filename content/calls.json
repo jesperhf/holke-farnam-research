@@ -16,7 +16,8 @@
    "entry": "power-and-chip-equipment",
    "stooq": "tsm.us",
    "sector": "Foundry",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "TSM"
   },
   {
    "id": "nvt",
@@ -33,7 +34,8 @@
    "entry": "power-and-chip-equipment",
    "stooq": "nvt.us",
    "sector": "Power and thermal",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "NVT"
   },
   {
    "id": "fn",
@@ -50,7 +52,8 @@
    "entry": "optical-networking",
    "stooq": "fn.us",
    "sector": "Optics",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "FN"
   },
   {
    "id": "asml",
@@ -67,7 +70,8 @@
    "entry": "power-and-chip-equipment",
    "stooq": "asml.us",
    "sector": "Chip equipment",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "ASML"
   },
   {
    "id": "vrt",
@@ -84,7 +88,8 @@
    "entry": "power-and-chip-equipment",
    "stooq": "vrt.us",
    "sector": "Power and thermal",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "VRT"
   },
   {
    "id": "skh",
@@ -101,7 +106,8 @@
    "entry": "memory-and-storage",
    "stooq": null,
    "sector": "Memory",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "000660.KS"
   },
   {
    "id": "mu",
@@ -118,7 +124,8 @@
    "entry": "memory-and-storage",
    "stooq": "mu.us",
    "sector": "Memory",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "MU"
   },
   {
    "id": "stx",
@@ -135,7 +142,8 @@
    "entry": "memory-and-storage",
    "stooq": "stx.us",
    "sector": "Storage",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "STX"
   },
   {
    "id": "wdc",
@@ -152,7 +160,8 @@
    "entry": "memory-and-storage",
    "stooq": "wdc.us",
    "sector": "Storage",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "WDC"
   },
   {
    "id": "amat",
@@ -169,7 +178,8 @@
    "entry": "power-and-chip-equipment",
    "stooq": "amat.us",
    "sector": "Chip equipment",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "AMAT"
   },
   {
    "id": "enr",
@@ -186,7 +196,8 @@
    "entry": "power-and-chip-equipment",
    "stooq": "enr.de",
    "sector": "Power and thermal",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "ENR.DE"
   },
   {
    "id": "cohr",
@@ -203,7 +214,8 @@
    "entry": "optical-networking",
    "stooq": "cohr.us",
    "sector": "Optics",
-   "published": "2026-10-22"
+   "published": "2026-10-22",
+   "yahoo": "COHR"
   }
  ]
 }

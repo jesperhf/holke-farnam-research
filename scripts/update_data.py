@@ -404,36 +404,61 @@ def build_cycle(raw):
 
 # ---------------------------------------------------------------- prices
 
+BROWSER_UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+              "Accept": "application/json,text/csv,*/*"}
+
+
+def get_text(url):
+    req = urllib.request.Request(url, headers=BROWSER_UA)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def yahoo_price(symbol):
+    js = json.loads(get_text(f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?range=5d&interval=1d"))
+    meta = js["chart"]["result"][0]["meta"]
+    price = meta.get("regularMarketPrice")
+    ts = meta.get("regularMarketTime")
+    if price is None:
+        raise RuntimeError("no regularMarketPrice")
+    date = dt.datetime.fromtimestamp(ts, dt.timezone.utc).date().isoformat() if ts else None
+    return {"price": float(price), "date": date, "source": "Yahoo Finance"}
+
+
 def stooq_price(symbol):
-    text = http_get(f"https://stooq.com/q/l/?s={urllib.parse.quote(symbol)}&f=sd2c&h&e=csv")
+    text = get_text(f"https://stooq.com/q/l/?s={urllib.parse.quote(symbol)}&f=sd2c&h&e=csv")
     rows = list(csv.DictReader(io.StringIO(text)))
     if not rows:
-        return None
+        raise RuntimeError("empty response: " + text[:80].replace("\n", " "))
     r = rows[0]
     close = r.get("Close")
     if close in (None, "", "N/D"):
-        return None
-    return {"price": float(close), "date": r.get("Date")}
+        raise RuntimeError("no close: " + text[:80].replace("\n", " "))
+    return {"price": float(close), "date": r.get("Date"), "source": "Stooq"}
 
 
 def update_prices():
     calls = json.load(open(os.path.join(ROOT, "content", "calls.json")))
-    out = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"), "prices": {}}
+    out = {"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"), "prices": {}, "errors": {}}
     try:  # keep prices entered by hand (marked "manual": true)
         old = json.load(open(os.path.join(DATA, "prices.json")))
         out["prices"].update({k: v for k, v in old.get("prices", {}).items() if v.get("manual")})
     except Exception:
         pass
     for c in calls["calls"]:
-        sym = c.get("stooq")
-        if not sym:
+        if c["id"] in out["prices"]:
             continue
-        try:
-            p = stooq_price(sym)
-            if p:
-                out["prices"][c["id"]] = p
-        except Exception as e:
-            print(f"price failed for {sym}: {e}", file=sys.stderr)
+        errs = []
+        for fn, sym in ((yahoo_price, c.get("yahoo")), (stooq_price, c.get("stooq"))):
+            if not sym:
+                continue
+            try:
+                out["prices"][c["id"]] = fn(sym)
+                break
+            except Exception as e:
+                errs.append(f"{fn.__name__}({sym}): {type(e).__name__}: {str(e)[:120]}")
+        if c["id"] not in out["prices"] and errs:
+            out["errors"][c["id"]] = errs
     return out
 
 # ---------------------------------------------------------------- main
@@ -451,9 +476,9 @@ def main():
         print(f"cycle update failed, keeping the previous file: {e}", file=sys.stderr)
     try:
         prices = update_prices()
-        if prices["prices"]:
-            json.dump(prices, open(os.path.join(DATA, "prices.json"), "w"), indent=1)
-        print("prices:", len(prices["prices"]))
+        # always written, so failures are visible in the repository
+        json.dump(prices, open(os.path.join(DATA, "prices.json"), "w"), indent=1)
+        print("prices:", len(prices["prices"]), "errors:", json.dumps(prices["errors"]))
     except Exception as e:
         print(f"price update failed, keeping the previous file: {e}", file=sys.stderr)
     return 0 if ok else 1

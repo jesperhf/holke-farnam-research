@@ -380,7 +380,7 @@ def build():
         '<div class="notes"><p><b>Reading the table.</b> "Buy below" is the price at which my base case earns my required return. "Gap to buy level" is how far the stock would have to fall to reach it. '
         '"Pass" means I would not buy even at the buy level without new information. Base, bear and bull values come from the scenario DCFs on the <a href="models.html">models page</a>.</p>'
         '<p><b>How I grade calls.</b> Over time this page answers two questions: did the stocks I passed on do worse than the ones I wanted, and did buy levels that filled go on to earn the returns my base cases implied.</p>'
-        "<p>SK hynix trades in Seoul, so its latest price is updated by hand.</p></div></section>")
+        "<p>Latest prices update every morning. SK hynix is in Korean won and Siemens Energy in euros.</p></div></section>")
     page("scorecard.html", "Scorecard", sc, "Scorecard", description="Every published call next to where the stock trades now.")
 
     # Models
