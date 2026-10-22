@@ -1,0 +1,66 @@
+{
+ "generated": "2026-10-22T22:38+00:00",
+ "prices": {
+  "tsm": {
+   "price": 412.35,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "nvt": {
+   "price": 127.67,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "fn": {
+   "price": 317.67,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "asml": {
+   "price": 1560.54,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "vrt": {
+   "price": 195.59,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "skh": {
+   "price": 1223000.0,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "mu": {
+   "price": 856.49,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "stx": {
+   "price": 642.14,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "wdc": {
+   "price": 354.19,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "amat": {
+   "price": 375.58,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "enr": {
+   "price": 122.2,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  },
+  "cohr": {
+   "price": 207.82,
+   "date": "2026-10-22",
+   "source": "Yahoo Finance"
+  }
+ },
+ "errors": {}
+}
