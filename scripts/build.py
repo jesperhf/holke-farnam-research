@@ -33,7 +33,7 @@ def load(path, default=None):
 
 SITE = load("content/site.json")
 CALLS = load("content/calls.json", {"calls": []})["calls"]
-HOLD = load("content/holdings.json", {"confirmed": False, "positions": []})
+BOOK = load("content/positions.json", {"snapshot": None, "positions": [], "closed": [], "trades": []})
 CYCLE = load("data/cycle.json", {})
 PRICES = load("data/prices.json", {"prices": {}})
 E = html.escape
@@ -154,7 +154,7 @@ def chain_diagram():
 # ---------------------------------------------------------------- layout
 
 NAV = [("index.html", "Home"), ("journal/index.html", "Journal"), ("tracker.html", "Cycle tracker"),
-       ("scorecard.html", "Scorecard"), ("models.html", "Models"), ("about.html", "About")]
+       ("scorecard.html", "Scorecard"), ("positions.html", "Positions"), ("models.html", "Models"), ("about.html", "About")]
 
 
 def page(path, title, body, current, scripts=(), description=""):
@@ -200,24 +200,139 @@ def stance_chip(s):
     return f'<span class="chip {cls}">{E(s)}</span>'
 
 
-def held_in(tickers):
-    pos = {p["ticker"].upper(): p for p in HOLD.get("positions", [])}
-    return [pos[t.upper()] for t in tickers if t.upper() in pos]
+def held_at(tickers, when):
+    """Positions in these tickers that were open on date `when` (ISO)."""
+    want = {t.upper() for t in tickers}
+    out = []
+    for p in BOOK.get("positions", []) + BOOK.get("closed", []):
+        if p["ticker"].upper() not in want:
+            continue
+        opened, closed = p.get("opened"), p.get("closed")
+        if opened and opened[:10] > when[:10]:
+            continue
+        if closed and closed[:10] <= when[:10]:
+            continue
+        out.append(p)
+    return out
 
 
 def disclosure_html(e):
     tickers = e.get("tickers") or []
-    if not HOLD.get("confirmed"):
+    if not BOOK.get("snapshot"):
         line = '<p class="flag">Position disclosure not yet confirmed by the author.</p>'
     else:
-        held = held_in(tickers)
+        held = held_at(tickers, e["published"])
         if held:
-            line = "<p>At publication I held positions in: " + ", ".join(E(f'{p["ticker"]}' + (f' ({p["note"]})' if p.get("note") else "")) for p in held) + ".</p>"
+            line = ("<p>At publication I held: " + ", ".join(E(p["ticker"]) for p in held) +
+                    '. Current weights are on the <a href="../positions.html">positions page</a>.</p>')
         else:
             line = "<p>At publication I held no position in any company discussed in this entry.</p>"
     return ('<aside class="disclose"><p><b>Disclosure.</b></p>' + line +
             "<p>This is my personal research journal, not investment advice. Valuations, scenario weights and buy levels are my own estimates. "
             'See the <a href="../about.html#disclosures">full disclosures</a>.</p></aside>')
+
+
+def fmt_open(v, snap=None):
+    if not v:
+        return ("Before " + short_date(snap)) if snap else "n/a"
+    if len(v) == 7:
+        return MONTHS[int(v[5:7]) - 1][:3] + " " + v[:4]
+    return short_date(v)
+
+
+def pos_price(ticker):
+    p = PRICES.get("prices", {}).get("pos:" + ticker.upper())
+    return (p["price"], p.get("date")) if p else (None, None)
+
+
+def current_weights():
+    """Drift each snapshot weight with its price since the snapshot; cash held constant."""
+    rows = BOOK.get("positions", [])
+    cash = BOOK.get("cash") or 0.0
+    vals = {}
+    for p in rows:
+        lp, _ = pos_price(p["ticker"])
+        drift = (lp / p["snapPrice"]) if (lp and p.get("snapPrice")) else 1.0
+        vals[p["ticker"]] = p["weight"] * drift
+    total = sum(vals.values()) + cash
+    if not total:
+        return {}, 0.0
+    return {k: v / total * 100 for k, v in vals.items()}, cash / total * 100
+
+
+def positions_page():
+    snap = BOOK.get("snapshot")
+    if not snap:
+        return ('<section class="page"><div class="sect-head"><h1>Positions</h1></div>'
+                '<p class="lede">Every position in my personal brokerage account, shown as a percent of the portfolio. No dollar amounts are published or stored anywhere on this site.</p>'
+                '<div class="table-box"><div class="empty">The first portfolio snapshot has not been loaded yet. Once it is, this page lists each position with its weight, '
+                "average cost per share, return since purchase, exit levels and a link to the research behind it, plus a dated log of every trade.</div></div></section>")
+    w, cash_now = current_weights()
+    rows = sorted(BOOK.get("positions", []), key=lambda p: -w.get(p["ticker"], 0))
+    top5 = sum(sorted(w.values(), reverse=True)[:5])
+    biggest = max(w.values()) if w else 0
+    strip = ('<div class="verdict"><div><div class="eyebrow">Snapshot ' + E(long_date(snap)) + '</div>'
+             f'<div class="phase-name">{len(rows)} positions</div><p>Weights below are estimated for today: each snapshot weight moves with its share price since the snapshot, and cash is held constant.</p></div>'
+             f'<div><div class="metrics"><div><b>{biggest:.1f}%</b><span>Largest position</span></div><div><b>{top5:.0f}%</b><span>Top five combined</span></div>'
+             f'<div><b>{cash_now:.1f}%</b><span>Cash</span></div></div></div></div>')
+    trs = []
+    for p in rows:
+        lp, ld = pos_price(p["ticker"])
+        ccy = p.get("currency", "USD")
+        wt = w.get(p["ticker"], p["weight"])
+        ret = f'<span class="{"pos" if lp >= p["avgCost"] else "neg"}">{pct((lp / p["avgCost"] - 1) * 100) if abs(lp / p["avgCost"] - 1) >= 0.005 else "0%"}</span>' if (lp and p.get("avgCost")) else '<span class="muted">n/a</span>'
+        plan = []
+        flags = []
+        if p.get("trimAbove"):
+            plan.append("Trim above " + money(p["trimAbove"], ccy))
+            if lp and lp >= p["trimAbove"]:
+                flags.append('<span class="chip L">At trim level</span>')
+        if p.get("exitBelow"):
+            plan.append("Exit below " + money(p["exitBelow"], ccy))
+            if lp and lp <= p["exitBelow"]:
+                flags.append('<span class="chip C">At exit level</span>')
+        if p.get("exitPlan"):
+            plan.append(E(p["exitPlan"]))
+        link = f'<a href="journal/{p["entry"]}.html">Research</a>' if p.get("entry") else '<span class="muted">No entry yet</span>'
+        opened = fmt_open(p.get("opened"), snap)
+        trs.append(
+            f'<tr><td><b>{E(p.get("name") or p["ticker"])}</b><span class="sub">{E(p["ticker"])}</span></td>'
+            f'<td class="num"><div class="wbar"><i style="width:{min(wt, 100) / max(biggest, 1) * 100:.1f}%"></i></div>{wt:.1f}%<span class="sub">snapshot {p["weight"]:.1f}%</span></td>'
+            f'<td class="num">{money(p["avgCost"], ccy) if p.get("avgCost") else "n/a"}</td>'
+            f'<td class="num">{money(lp, ccy) if lp else "n/a"}' + (f'<span class="sub">{E(ld)}</span>' if ld else "") + "</td>"
+            f'<td class="num">{ret}</td><td>{opened}</td>'
+            f'<td>{"<br>".join(plan) if plan else "<span class=muted>Not set</span>"}{(" " + " ".join(flags)) if flags else ""}</td><td>{link}</td></tr>')
+    open_tbl = ('<div class="table-box"><table class="calls positions"><thead><tr><th>Position</th><th class="num">Weight</th><th class="num">Avg cost</th>'
+                '<th class="num">Latest</th><th class="num">Return</th><th>Opened</th><th>Exit plan</th><th></th></tr></thead><tbody>' + "".join(trs) + "</tbody></table></div>")
+    closed = BOOK.get("closed", [])
+    if closed:
+        crs = "".join(
+            f'<tr><td><b>{E(c.get("name") or c["ticker"])}</b><span class="sub">{E(c["ticker"])}</span></td>'
+            f'<td>{fmt_open(c.get("opened"))}</td><td>{short_date(c["closed"])}</td>'
+            f'<td class="num">{money(c["avgCost"], c.get("currency", "USD"))}</td><td class="num">{money(c["exitPrice"], c.get("currency", "USD"))}</td>'
+            f'<td class="num"><span class="{"pos" if c["exitPrice"] >= c["avgCost"] else "neg"}">{pct((c["exitPrice"] / c["avgCost"] - 1) * 100)}</span></td>'
+            f'<td>{E(c.get("note", ""))}</td></tr>' for c in sorted(closed, key=lambda c: c["closed"], reverse=True))
+        closed_html = ('<section class="sect"><h2>Closed positions</h2><div class="table-box"><table class="calls"><thead><tr><th>Position</th><th>Opened</th><th>Closed</th>'
+                       '<th class="num">Avg cost</th><th class="num">Exit price</th><th class="num">Return</th><th>Why I sold</th></tr></thead><tbody>' + crs + "</tbody></table></div></section>")
+    else:
+        closed_html = '<section class="sect"><h2>Closed positions</h2><p class="muted" style="font-family:var(--f-ui)">None yet. Every full exit is recorded here with its exit price and return.</p></section>'
+    trades = BOOK.get("trades", [])
+    if trades:
+        trs2 = "".join(
+            f'<tr><td class="nowrap">{short_date(t["date"])}</td><td>{E(t["action"])}</td><td><b>{E(t["ticker"])}</b></td>'
+            f'<td class="num">{t["from"]:.1f}% → {t["to"]:.1f}%</td><td class="num">{money(t["price"], t.get("currency", "USD")) if t.get("price") else ""}</td><td>{E(t.get("note", ""))}</td></tr>'
+            for t in sorted(trades, key=lambda t: t["date"], reverse=True))
+        log = ('<section class="sect"><h2>Trade log</h2><div class="table-box"><table class="calls"><thead><tr><th>Date</th><th>Action</th><th>Ticker</th>'
+               '<th class="num">Weight</th><th class="num">Price</th><th>Note</th></tr></thead><tbody>' + trs2 + "</tbody></table></div></section>")
+    else:
+        log = '<section class="sect"><h2>Trade log</h2><p class="muted" style="font-family:var(--f-ui)">Trades after the first snapshot are logged here by date, as weight changes rather than amounts.</p></section>'
+    return ('<section class="sect"><div class="sect-head"><h1>Positions</h1><span class="muted" style="font-family:var(--f-ui);font-size:14px">'
+            + E(BOOK.get("account", "")) + ' · percentages only</span></div>'
+            '<p class="lede">Every position I hold, as a percent of the portfolio, with my average cost, my exit levels and the research behind it. No dollar amounts are published or stored anywhere on this site.</p>'
+            + strip + open_tbl + "</section>" + closed_html + log +
+            '<div class="notes"><p><b>How to read this.</b> Return is the latest price against my average cost per share, before dividends. Exit levels are set in advance: '
+            '"trim above" is where I would reduce the position, "exit below" is where the thesis would be broken. A chip appears when the price reaches either level.</p>'
+            "<p>Trades are posted after they are filled, not before.</p></div>")
 
 
 def latest_price(c):
@@ -248,7 +363,10 @@ def calls_table(rows, compact=False):
         ref = lp if lp is not None else c["price"]
         since = f'<span class="{"pos" if lp >= c["price"] else "neg"}">{(lp / c["price"] - 1) * 100:+.1f}%</span>' if lp is not None else '<span class="muted">n/a</span>'
         gap = (c["buyBelow"] / ref - 1) * 100
-        if c["stance"].lower().startswith("pass"):
+        held_now = any(p["ticker"].upper() == c.get("yahoo", "").upper() or p["ticker"].upper() == c["ticker"].split(" ")[0].upper() for p in BOOK.get("positions", []))
+        if held_now:
+            status = '<span class="chip hit">Held</span>'
+        elif c["stance"].lower().startswith("pass"):
             status = '<span class="chip pass">Pass</span>'
         elif lp is not None and lp <= c["buyBelow"]:
             status = '<span class="chip hit">At buy level</span>'
@@ -400,14 +518,15 @@ def build():
           'Every scenario path, margin and discount rate is my own assumption, set out where you can change it.</p></div>')
     page("models.html", "Models", mp, "Models", description="The valuation workbooks behind each journal entry.")
 
+    page("positions.html", "Positions", positions_page(), "Positions",
+         description="Every position in my personal account as a percent of the portfolio, with cost basis, exit levels and the research behind it.")
+
     # About and disclosures
-    pos = HOLD.get("positions", [])
-    if not HOLD.get("confirmed"):
+    if not BOOK.get("snapshot"):
         hold_html = '<p class="flag">My current positions have not been listed here yet.</p>'
-    elif pos:
-        hold_html = "<ul>" + "".join(f'<li>{E(p["ticker"])}{(" · " + E(p["note"])) if p.get("note") else ""}</li>' for p in pos) + f'</ul><p class="muted">As of {long_date(HOLD["asOf"])}.</p>'
     else:
-        hold_html = f'<p>I hold no positions in the companies discussed on this site (as of {long_date(HOLD["asOf"])}).</p>'
+        hold_html = (f'<p>Every position in my personal brokerage account is listed on the <a href="positions.html">positions page</a>, '
+                     f'as percentages of the portfolio (snapshot of {long_date(BOOK["snapshot"])}, with trades logged since). Each journal entry states which of its companies I held at publication.</p>')
     bio = "".join(f"<p>{E(b)}</p>" for b in SITE["bio"])
     proc = f'<p>{E(SITE["process_note"])}</p>' if SITE.get("process_note") else ""
     about = (f'<section class="page"><div class="sect-head"><h1>About</h1></div>{bio}'

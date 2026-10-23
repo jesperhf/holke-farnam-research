@@ -208,3 +208,6 @@ table.calls td:first-child { min-width: 10.5rem; }
 table.calls .nowrap { white-space: nowrap; }
 table.calls { font-size: 14px; }
 table.calls th, table.calls td { padding: 9px 10px; }
+.wbar { height: 5px; background: var(--grid); border-radius: 3px; margin-bottom: 5px; overflow: hidden; min-width: 70px; }
+.wbar i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+table.positions td:nth-child(7) { font-size: 13.5px; min-width: 11rem; }

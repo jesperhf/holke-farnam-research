@@ -1,0 +1,9 @@
+{
+ "note": "Percentages and per-share prices only. Never store dollar amounts or share counts in this file: the repository is public.",
+ "account": "Personal brokerage account",
+ "snapshot": null,
+ "cash": null,
+ "positions": [],
+ "closed": [],
+ "trades": []
+}

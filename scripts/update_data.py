@@ -459,6 +459,20 @@ def update_prices():
                 errs.append(f"{fn.__name__}({sym}): {type(e).__name__}: {str(e)[:120]}")
         if c["id"] not in out["prices"] and errs:
             out["errors"][c["id"]] = errs
+    # open positions, keyed "pos:TICKER"
+    try:
+        book = json.load(open(os.path.join(ROOT, "content", "positions.json")))
+    except Exception:
+        book = {"positions": []}
+    for p in book.get("positions", []):
+        key = "pos:" + p["ticker"].upper()
+        if key in out["prices"]:
+            continue
+        sym = p.get("yahoo") or p["ticker"].upper().replace(".", "-").replace("/", "-")
+        try:
+            out["prices"][key] = yahoo_price(sym)
+        except Exception as e:
+            out["errors"][key] = [f"yahoo_price({sym}): {type(e).__name__}: {str(e)[:120]}"]
     return out
 
 # ---------------------------------------------------------------- main

@@ -9,12 +9,13 @@ A static investment journal with a live business cycle tracker. It is hosted fre
 | `content/journal/` | Journal entries in Markdown. One file per entry, with the date, title, summary, stance and tickers at the top. |
 | `content/updates/` | Dated updates to past entries. Entries themselves are never edited after publishing. |
 | `content/calls.json` | Every published call (price at publication, bear, base and bull values, buy level). Add rows; never edit old ones. |
-| `content/holdings.json` | Your positions, used for the disclosure on every entry. |
+| `content/positions.json` | Your positions as percentages of the portfolio, with average cost, exit levels, closed positions and a trade log. Drives the Positions page and every entry's disclosure. Never put dollar amounts or share counts here. |
 | `content/site.json` | Site name, tagline, bio and links. |
 | `models/` | The Excel workbooks offered for download. |
 | `data/cycle.json` | Business cycle reading and history, rewritten daily from FRED. |
 | `data/prices.json` | Latest prices for the scorecard, rewritten daily (best effort). |
 | `scripts/update_data.py` | Pulls FRED series and prices. Standard library only. |
+| `tools/import_schwab.py` | Converts a Schwab positions export into `positions.json`, writing percentages only. The CSV itself is never committed. |
 | `scripts/build.py` | Turns everything above into the site in `_site/`. Needs `pip install markdown`. |
 | `.github/workflows/site.yml` | The daily job: refresh data, build, publish. |
 
@@ -30,7 +31,7 @@ A static investment journal with a live business cycle tracker. It is hosted fre
 
 ## Before you share the link
 
-- Fill in `content/holdings.json` with any positions you hold in companies the site discusses (Nvidia is mentioned in two entries), set `asOf` to today and `confirmed` to `true`. Until then every entry shows a "disclosure not yet confirmed" line.
+- Load your positions into `content/positions.json` (run `tools/import_schwab.py` on a Schwab export, or ask Claude to do it). Until a snapshot is loaded, every entry shows a "disclosure not yet confirmed" line.
 - Read the bio in `content/site.json` and change anything you don't want public.
 - If you want to say how the research is produced, write it in `process_note` in `content/site.json`; it appears on the About page.
 
