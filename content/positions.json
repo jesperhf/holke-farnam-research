@@ -12,7 +12,9 @@
       "name": "Altria",
       "type": "Equity",
       "target": 63,
-      "exitPlan": "Sell on a dividend cut, or if cigarette volumes fall more than about 8% a year without price increases to offset them."
+      "exitPlan": "Sell on a dividend cut, or if cigarette volumes fall more than about 8% a year without price increases to offset them.",
+      "trimAbove": 83,
+      "exitBelow": 53
     },
     {
       "ticker": "KO",
@@ -22,7 +24,9 @@
       "name": "Coca-Cola",
       "type": "Equity",
       "target": 72,
-      "exitPlan": "Sell if organic growth is below 3% for two quarters in a row, or if North American volumes decline."
+      "exitPlan": "Sell if organic growth is below 3% for two quarters in a row, or if North American volumes decline.",
+      "trimAbove": 92,
+      "exitBelow": 63
     },
     {
       "ticker": "GOOG",
@@ -32,7 +36,9 @@
       "name": "Alphabet (Class C)",
       "type": "Equity",
       "target": 255,
-      "exitPlan": "Sell if search revenue growth turns negative, or if Cloud operating margin falls while capex keeps rising."
+      "exitPlan": "Sell if search revenue growth turns negative, or if Cloud operating margin falls while capex keeps rising.",
+      "trimAbove": 325,
+      "exitBelow": 200
     },
     {
       "ticker": "JCPI",
@@ -51,7 +57,9 @@
       "name": "UnitedHealth Group",
       "type": "Equity",
       "target": 475,
-      "exitPlan": "Sell if the medical care ratio goes back above 90% excluding reserve releases, or if 2027 EPS guidance comes in below $22."
+      "exitPlan": "Sell if the medical care ratio goes back above 90% excluding reserve releases, or if 2027 EPS guidance comes in below $22.",
+      "trimAbove": 695,
+      "exitBelow": 390
     },
     {
       "ticker": "LNG",
@@ -61,7 +69,9 @@
       "name": "Cheniere Energy",
       "type": "Equity",
       "target": 305,
-      "exitPlan": "Sell on a cut to cash flow guidance, or if new long-term contracting stalls as the 2027 to 2028 LNG supply wave arrives."
+      "exitPlan": "Sell on a cut to cash flow guidance, or if new long-term contracting stalls as the 2027 to 2028 LNG supply wave arrives.",
+      "trimAbove": 440,
+      "exitBelow": 220
     },
     {
       "ticker": "NOW",
@@ -71,7 +81,9 @@
       "name": "ServiceNow",
       "type": "Equity",
       "target": 105,
-      "exitPlan": "Sell if subscription revenue or current remaining performance obligations grow less than 15%."
+      "exitPlan": "Sell if subscription revenue or current remaining performance obligations grow less than 15%.",
+      "trimAbove": 150,
+      "exitBelow": 81
     },
     {
       "ticker": "CLS",
@@ -81,7 +93,9 @@
       "name": "Celestica",
       "type": "Equity",
       "target": 200,
-      "exitPlan": "Sell if a major hyperscaler cuts capex, or if 2027 revenue guidance comes in below 2026. The first position to cut if a contraction starts."
+      "exitPlan": "Sell if a major hyperscaler cuts capex, or if 2027 revenue guidance comes in below 2026. The first position to cut if a contraction starts.",
+      "trimAbove": 305,
+      "exitBelow": 155
     },
     {
       "ticker": "EPD",
@@ -91,7 +105,9 @@
       "name": "Enterprise Products Partners",
       "type": "Equity",
       "target": 35,
-      "exitPlan": "Sell on a distribution cut, or if distribution coverage falls below 1.3 times."
+      "exitPlan": "Sell on a distribution cut, or if distribution coverage falls below 1.3 times.",
+      "trimAbove": 48,
+      "exitBelow": 28
     },
     {
       "ticker": "HYBL",
@@ -110,7 +126,9 @@
       "name": "Nvidia",
       "type": "Equity",
       "target": 165,
-      "exitPlan": "Sell if any hyperscaler guides 2027 capex flat or down, or if gross margin falls below 70%."
+      "exitPlan": "Sell if any hyperscaler guides 2027 capex flat or down, or if gross margin falls below 70%.",
+      "trimAbove": 235,
+      "exitBelow": 130
     },
     {
       "ticker": "VGK",
@@ -129,7 +147,9 @@
       "name": "Bank of America",
       "type": "Equity",
       "target": 54,
-      "exitPlan": "Sell if return on tangible equity is below 12% excluding one-offs, or if expenses outgrow revenue for two more quarters."
+      "exitPlan": "Sell if return on tangible equity is below 12% excluding one-offs, or if expenses outgrow revenue for two more quarters.",
+      "trimAbove": 63,
+      "exitBelow": 45
     },
     {
       "ticker": "JPM",
@@ -139,7 +159,9 @@
       "name": "JPMorgan Chase",
       "type": "Equity",
       "target": 260,
-      "exitPlan": "Sell if return on tangible equity falls below 15%, or if net charge-offs rise quickly."
+      "exitPlan": "Sell if return on tangible equity falls below 15%, or if net charge-offs rise quickly.",
+      "trimAbove": 315,
+      "exitBelow": 225
     },
     {
       "ticker": "XBI",
@@ -158,7 +180,9 @@
       "name": "First Solar",
       "type": "Equity",
       "target": 125,
-      "exitPlan": "Sell if the backlog falls below 35 GW, or if the Section 45X credits change."
+      "exitPlan": "Sell if the backlog falls below 35 GW, or if the Section 45X credits change.",
+      "trimAbove": 190,
+      "exitBelow": 99
     },
     {
       "ticker": "TMC",
@@ -168,10 +192,13 @@
       "name": "TMC the metals company",
       "type": "Equity",
       "target": 2.25,
-      "exitPlan": "Sell it all on a permit denial or a ruling that blocks US seabed mining. Keep it under 2% of the portfolio."
+      "exitPlan": "Sell it all on a permit denial or a ruling that blocks US seabed mining. Keep it under 2% of the portfolio.",
+      "trimAbove": 4.0,
+      "exitBelow": 1.5
     }
   ],
   "closed": [],
   "trades": [],
-  "targetsAsOf": "2026-10-23"
+  "targetsAsOf": "2026-10-23",
+  "levelsAsOf": "2026-10-23"
 }

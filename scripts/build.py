@@ -340,7 +340,7 @@ def positions_page():
             '<p class="lede">Every position I hold, as a percent of the portfolio, with my average cost, my base target, my exit plan and the research behind it. No dollar amounts are published or stored anywhere on this site.</p>'
             + strip + open_tbl + "</section>" + closed_html + log +
             '<div class="notes"><p><b>How to read this.</b> Return is the latest price against my average cost per share, before dividends. Exit levels are set in advance: '
-            '"trim above" is where I would reduce the position, "exit below" is where the thesis would be broken. A chip appears when the price reaches either level.</p>'
+            '"trim above" is the bull-case value, where I would sell about a third; "exit below" sits halfway between the bear and base values, where I reread the thesis and sell unless it still holds. A chip appears when the price reaches either level.</p>'
             '<p><b>Base targets</b> are the base-case values from the <a href="models.html">current holdings workbook</a>: what each business is worth if my base case plays out and I want to earn a full cost of capital (a 5.3% Treasury plus a 5% equity premium, scaled by risk). '
             'They are bear-leaning by design, and a price above the target does not mean I am selling. It means the stock now offers less than that return; the workbook shows how much less. Funds have weight ranges instead. Purchase dates are not shown.</p>'
             "<p>Trades are posted after they are filled, not before.</p></div>")
