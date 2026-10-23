@@ -50,8 +50,12 @@ def main():
     snap = args[args.index("--date") + 1] if "--date" in args else None
     text = open(path, encoding="utf-8-sig").read()
     if not snap:
-        m = re.search(r"as of .*?(\d{1,2})/(\d{1,2})/(\d{4})", text)
-        snap = f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}" if m else dt.date.today().isoformat()
+        m = re.search(r"as of .*?(\d{4})/(\d{1,2})/(\d{1,2})", text)
+        if m:
+            snap = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+        else:
+            m = re.search(r"as of .*?(\d{1,2})/(\d{1,2})/(\d{4})", text)
+            snap = f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}" if m else dt.date.today().isoformat()
     lines = text.splitlines()
     start = next(i for i, l in enumerate(lines) if l.strip('"').lower().startswith("symbol"))
     rows = list(csv.DictReader(io.StringIO("\n".join(lines[start:]))))
@@ -62,8 +66,9 @@ def main():
         mv = num(find(r, "mkt val", "market value"))
         if not sym or mv is None:
             continue
-        if sym.lower().startswith("cash"):
-            cash_val += mv
+        stype0 = (find(r, "security type", "asset type") or "").strip().lower()
+        if sym.lower().startswith("cash") or "money market" in stype0:
+            cash_val += mv  # cash and money market funds count as cash
             continue
         if sym.lower().startswith("account total") or sym.lower().startswith("positions total"):
             continue

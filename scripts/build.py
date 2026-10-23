@@ -278,6 +278,8 @@ def positions_page():
     trs = []
     for p in rows:
         lp, ld = pos_price(p["ticker"])
+        if lp is None and p.get("snapPrice"):
+            lp, ld = p["snapPrice"], snap  # until the daily job prices it
         ccy = p.get("currency", "USD")
         wt = w.get(p["ticker"], p["weight"])
         ret = f'<span class="{"pos" if lp >= p["avgCost"] else "neg"}">{pct((lp / p["avgCost"] - 1) * 100) if abs(lp / p["avgCost"] - 1) >= 0.005 else "0%"}</span>' if (lp and p.get("avgCost")) else '<span class="muted">n/a</span>'

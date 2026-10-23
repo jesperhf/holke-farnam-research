@@ -5,7 +5,7 @@ written: 2026-10-19
 published: 2026-10-22
 series: AI trade, part 1 of 5
 summary: The macro cycle is late, but the AI capex cycle is not finished. A map of the eleven sub-sectors in the AI trade and which ones own the physical bottlenecks.
-tickers: [NVDA, VRT, ETN, GEV, ENR, ASML, AMAT, LRCX, KLAC, TSM, ANET, AVGO, LITE, COHR, CRDO, GLW, FN, CIEN, MU, SKH, MRVL, AMD, CEG, VST, TLN, NRG, MSFT, AMZN, GOOGL, META, ORCL, CRWV, NBIS, IREN, EQIX, DLR, CRM, NOW, ADBE, PLTR, SNOW, DDOG, TSLA, QCOM, AAPL]
+tickers: [NVDA, VRT, ETN, GEV, ENR, ASML, AMAT, LRCX, KLAC, TSM, ANET, AVGO, LITE, COHR, CRDO, GLW, FN, CIEN, MU, SKH, MRVL, AMD, CEG, VST, TLN, NRG, MSFT, AMZN, GOOGL, GOOG, META, ORCL, CRWV, NBIS, IREN, EQIX, DLR, CRM, NOW, ADBE, PLTR, SNOW, DDOG, TSLA, QCOM, AAPL]
 stance: Research map
 ---
 
