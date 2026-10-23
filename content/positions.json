@@ -1,146 +1,177 @@
 {
- "note": "Percentages and per-share prices only. Never store dollar amounts or share counts in this file: the repository is public.",
- "account": "Personal brokerage account",
- "snapshot": "2026-10-23",
- "cash": 15.39,
- "positions": [
-  {
-   "ticker": "MO",
-   "weight": 8.71,
-   "snapPrice": 75.02,
-   "avgCost": 61.3705,
-   "name": "Altria",
-   "type": "Equity"
-  },
-  {
-   "ticker": "KO",
-   "weight": 8.41,
-   "snapPrice": 93.305,
-   "avgCost": 63.637,
-   "name": "Coca-Cola",
-   "type": "Equity"
-  },
-  {
-   "ticker": "GOOG",
-   "weight": 7.39,
-   "snapPrice": 320.0066,
-   "avgCost": 171.8387,
-   "name": "Alphabet (Class C)",
-   "type": "Equity"
-  },
-  {
-   "ticker": "JCPI",
-   "weight": 7.15,
-   "snapPrice": 46.69,
-   "avgCost": 48.2986,
-   "name": "JPMorgan Inflation Managed Bond ETF",
-   "type": "ETFs & Closed End Funds"
-  },
-  {
-   "ticker": "UNH",
-   "weight": 6.48,
-   "snapPrice": 423.49,
-   "avgCost": 245.9776,
-   "name": "UnitedHealth Group",
-   "type": "Equity"
-  },
-  {
-   "ticker": "LNG",
-   "weight": 5.51,
-   "snapPrice": 297.695,
-   "avgCost": 192.6894,
-   "name": "Cheniere Energy",
-   "type": "Equity"
-  },
-  {
-   "ticker": "NOW",
-   "weight": 4.93,
-   "snapPrice": 156.77,
-   "avgCost": 95.5426,
-   "name": "ServiceNow",
-   "type": "Equity"
-  },
-  {
-   "ticker": "CLS",
-   "weight": 4.54,
-   "snapPrice": 266.575,
-   "avgCost": 344.725,
-   "name": "Celestica",
-   "type": "Equity"
-  },
-  {
-   "ticker": "EPD",
-   "weight": 4.41,
-   "snapPrice": 37.37,
-   "avgCost": 32.067,
-   "name": "Enterprise Products Partners",
-   "type": "Equity"
-  },
-  {
-   "ticker": "HYBL",
-   "weight": 4.12,
-   "snapPrice": 27.32,
-   "avgCost": 28.4031,
-   "name": "State Street Blackstone High Income ETF",
-   "type": "ETFs & Closed End Funds"
-  },
-  {
-   "ticker": "NVDA",
-   "weight": 3.94,
-   "snapPrice": 212.9,
-   "avgCost": 126.944,
-   "name": "Nvidia",
-   "type": "Equity"
-  },
-  {
-   "ticker": "VGK",
-   "weight": 3.84,
-   "snapPrice": 86.39,
-   "avgCost": 74.4304,
-   "name": "Vanguard FTSE Europe ETF",
-   "type": "ETFs & Closed End Funds"
-  },
-  {
-   "ticker": "BAC",
-   "weight": 3.78,
-   "snapPrice": 50.7252,
-   "avgCost": 38.2819,
-   "name": "Bank of America",
-   "type": "Equity"
-  },
-  {
-   "ticker": "JPM",
-   "weight": 3.41,
-   "snapPrice": 331.84,
-   "avgCost": 241.4877,
-   "name": "JPMorgan Chase",
-   "type": "Equity"
-  },
-  {
-   "ticker": "XBI",
-   "weight": 3.33,
-   "snapPrice": 149.865,
-   "avgCost": 87.5467,
-   "name": "SPDR S&P Biotech ETF",
-   "type": "ETFs & Closed End Funds"
-  },
-  {
-   "ticker": "FSLR",
-   "weight": 2.86,
-   "snapPrice": 171.565,
-   "avgCost": 173.3144,
-   "name": "First Solar",
-   "type": "Equity"
-  },
-  {
-   "ticker": "TMC",
-   "weight": 1.8,
-   "snapPrice": 2.435,
-   "avgCost": 1.486,
-   "name": "TMC the metals company",
-   "type": "Equity"
-  }
- ],
- "closed": [],
- "trades": []
+  "note": "Percentages and per-share prices only. Never store dollar amounts or share counts in this file: the repository is public.",
+  "account": "Personal brokerage account",
+  "snapshot": "2026-10-23",
+  "cash": 15.39,
+  "positions": [
+    {
+      "ticker": "MO",
+      "weight": 8.71,
+      "snapPrice": 75.02,
+      "avgCost": 61.3705,
+      "name": "Altria",
+      "type": "Equity",
+      "target": 63,
+      "exitPlan": "Sell on a dividend cut, or if cigarette volumes fall more than about 8% a year without price increases to offset them."
+    },
+    {
+      "ticker": "KO",
+      "weight": 8.41,
+      "snapPrice": 93.305,
+      "avgCost": 63.637,
+      "name": "Coca-Cola",
+      "type": "Equity",
+      "target": 72,
+      "exitPlan": "Sell if organic growth is below 3% for two quarters in a row, or if North American volumes decline."
+    },
+    {
+      "ticker": "GOOG",
+      "weight": 7.39,
+      "snapPrice": 320.0066,
+      "avgCost": 171.8387,
+      "name": "Alphabet (Class C)",
+      "type": "Equity",
+      "target": 255,
+      "exitPlan": "Sell if search revenue growth turns negative, or if Cloud operating margin falls while capex keeps rising."
+    },
+    {
+      "ticker": "JCPI",
+      "weight": 7.15,
+      "snapPrice": 46.69,
+      "avgCost": 48.2986,
+      "name": "JPMorgan Inflation Managed Bond ETF",
+      "type": "ETFs & Closed End Funds",
+      "exitPlan": "Keep at 5% to 10%. Switch to plain Treasuries if CPI runs below 2.5% for three months."
+    },
+    {
+      "ticker": "UNH",
+      "weight": 6.48,
+      "snapPrice": 423.49,
+      "avgCost": 245.9776,
+      "name": "UnitedHealth Group",
+      "type": "Equity",
+      "target": 475,
+      "exitPlan": "Sell if the medical care ratio goes back above 90% excluding reserve releases, or if 2027 EPS guidance comes in below $22."
+    },
+    {
+      "ticker": "LNG",
+      "weight": 5.51,
+      "snapPrice": 297.695,
+      "avgCost": 192.6894,
+      "name": "Cheniere Energy",
+      "type": "Equity",
+      "target": 305,
+      "exitPlan": "Sell on a cut to cash flow guidance, or if new long-term contracting stalls as the 2027 to 2028 LNG supply wave arrives."
+    },
+    {
+      "ticker": "NOW",
+      "weight": 4.93,
+      "snapPrice": 156.77,
+      "avgCost": 95.5426,
+      "name": "ServiceNow",
+      "type": "Equity",
+      "target": 105,
+      "exitPlan": "Sell if subscription revenue or current remaining performance obligations grow less than 15%."
+    },
+    {
+      "ticker": "CLS",
+      "weight": 4.54,
+      "snapPrice": 266.575,
+      "avgCost": 344.725,
+      "name": "Celestica",
+      "type": "Equity",
+      "target": 200,
+      "exitPlan": "Sell if a major hyperscaler cuts capex, or if 2027 revenue guidance comes in below 2026. The first position to cut if a contraction starts."
+    },
+    {
+      "ticker": "EPD",
+      "weight": 4.41,
+      "snapPrice": 37.37,
+      "avgCost": 32.067,
+      "name": "Enterprise Products Partners",
+      "type": "Equity",
+      "target": 35,
+      "exitPlan": "Sell on a distribution cut, or if distribution coverage falls below 1.3 times."
+    },
+    {
+      "ticker": "HYBL",
+      "weight": 4.12,
+      "snapPrice": 27.32,
+      "avgCost": 28.4031,
+      "name": "State Street Blackstone High Income ETF",
+      "type": "ETFs & Closed End Funds",
+      "exitPlan": "Keep at 0% to 5%. Sell it all if two of the four contraction signals on the cycle tracker fire, or if high-yield spreads widen sharply."
+    },
+    {
+      "ticker": "NVDA",
+      "weight": 3.94,
+      "snapPrice": 212.9,
+      "avgCost": 126.944,
+      "name": "Nvidia",
+      "type": "Equity",
+      "target": 165,
+      "exitPlan": "Sell if any hyperscaler guides 2027 capex flat or down, or if gross margin falls below 70%."
+    },
+    {
+      "ticker": "VGK",
+      "weight": 3.84,
+      "snapPrice": 86.39,
+      "avgCost": 74.4304,
+      "name": "Vanguard FTSE Europe ETF",
+      "type": "ETFs & Closed End Funds",
+      "exitPlan": "Keep at 3% to 6%. Trim back to 6% if it grows past it."
+    },
+    {
+      "ticker": "BAC",
+      "weight": 3.78,
+      "snapPrice": 50.7252,
+      "avgCost": 38.2819,
+      "name": "Bank of America",
+      "type": "Equity",
+      "target": 54,
+      "exitPlan": "Sell if return on tangible equity is below 12% excluding one-offs, or if expenses outgrow revenue for two more quarters."
+    },
+    {
+      "ticker": "JPM",
+      "weight": 3.41,
+      "snapPrice": 331.84,
+      "avgCost": 241.4877,
+      "name": "JPMorgan Chase",
+      "type": "Equity",
+      "target": 260,
+      "exitPlan": "Sell if return on tangible equity falls below 15%, or if net charge-offs rise quickly."
+    },
+    {
+      "ticker": "XBI",
+      "weight": 3.33,
+      "snapPrice": 149.865,
+      "avgCost": 87.5467,
+      "name": "SPDR S&P Biotech ETF",
+      "type": "ETFs & Closed End Funds",
+      "exitPlan": "Keep at 2% to 5%. Trim back to 5% if it grows past it; review if the Fed keeps hiking into 2027."
+    },
+    {
+      "ticker": "FSLR",
+      "weight": 2.86,
+      "snapPrice": 171.565,
+      "avgCost": 173.3144,
+      "name": "First Solar",
+      "type": "Equity",
+      "target": 125,
+      "exitPlan": "Sell if the backlog falls below 35 GW, or if the Section 45X credits change."
+    },
+    {
+      "ticker": "TMC",
+      "weight": 1.8,
+      "snapPrice": 2.435,
+      "avgCost": 1.486,
+      "name": "TMC the metals company",
+      "type": "Equity",
+      "target": 2.25,
+      "exitPlan": "Sell it all on a permit denial or a ruling that blocks US seabed mining. Keep it under 2% of the portfolio."
+    }
+  ],
+  "closed": [],
+  "trades": [],
+  "targetsAsOf": "2026-10-23"
 }

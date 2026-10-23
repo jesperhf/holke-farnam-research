@@ -295,17 +295,24 @@ def positions_page():
                 flags.append('<span class="chip C">At exit level</span>')
         if p.get("exitPlan"):
             plan.append(E(p["exitPlan"]))
-        link = f'<a href="journal/{p["entry"]}.html">Research</a>' if p.get("entry") else '<span class="muted">No entry yet</span>'
+        link = f'<a href="journal/{p["entry"]}.html">Research</a>' if p.get("entry") else '<span class="muted nowrap">No entry yet</span>'
+        if p.get("target"):
+            tgt = money(p["target"], ccy)
+            if lp:
+                gap = (p["target"] / lp - 1) * 100
+                tgt += f'<span class="sub">{pct(gap)} from here</span>'
+        else:
+            tgt = '<span class="muted">' + ("Fund" if p.get("type") == "Fund" or p["ticker"] in ("JCPI", "HYBL", "VGK", "XBI") else "None") + "</span>"
         opened = fmt_open(p.get("opened"), snap)
         trs.append(
             f'<tr><td><b>{E(p.get("name") or p["ticker"])}</b><span class="sub">{E(p["ticker"])}</span></td>'
             f'<td class="num"><div class="wbar"><i style="width:{min(wt, 100) / max(biggest, 1) * 100:.1f}%"></i></div>{wt:.1f}%<span class="sub">snapshot {p["weight"]:.1f}%</span></td>'
             f'<td class="num">{money(p["avgCost"], ccy) if p.get("avgCost") else "n/a"}</td>'
             f'<td class="num">{money(lp, ccy) if lp else "n/a"}' + (f'<span class="sub">{E(ld)}</span>' if ld else "") + "</td>"
-            f'<td class="num">{ret}</td><td>{opened}</td>'
+            f'<td class="num">{ret}</td><td class="num">{tgt}</td>'
             f'<td>{"<br>".join(plan) if plan else "<span class=muted>Not set</span>"}{(" " + " ".join(flags)) if flags else ""}</td><td>{link}</td></tr>')
     open_tbl = ('<div class="table-box"><table class="calls positions"><thead><tr><th>Position</th><th class="num">Weight</th><th class="num">Avg cost</th>'
-                '<th class="num">Latest</th><th class="num">Return</th><th>Opened</th><th>Exit plan</th><th></th></tr></thead><tbody>' + "".join(trs) + "</tbody></table></div>")
+                '<th class="num">Latest</th><th class="num">Return</th><th class="num">Base target</th><th>Exit plan</th><th></th></tr></thead><tbody>' + "".join(trs) + "</tbody></table></div>")
     closed = BOOK.get("closed", [])
     if closed:
         crs = "".join(
@@ -330,10 +337,12 @@ def positions_page():
         log = '<section class="sect"><h2>Trade log</h2><p class="muted" style="font-family:var(--f-ui)">Trades after the first snapshot are logged here by date, as weight changes rather than amounts.</p></section>'
     return ('<section class="sect"><div class="sect-head"><h1>Positions</h1><span class="muted" style="font-family:var(--f-ui);font-size:14px">'
             + E(BOOK.get("account", "")) + ' · percentages only</span></div>'
-            '<p class="lede">Every position I hold, as a percent of the portfolio, with my average cost, my exit levels and the research behind it. No dollar amounts are published or stored anywhere on this site.</p>'
+            '<p class="lede">Every position I hold, as a percent of the portfolio, with my average cost, my base target, my exit plan and the research behind it. No dollar amounts are published or stored anywhere on this site.</p>'
             + strip + open_tbl + "</section>" + closed_html + log +
             '<div class="notes"><p><b>How to read this.</b> Return is the latest price against my average cost per share, before dividends. Exit levels are set in advance: '
             '"trim above" is where I would reduce the position, "exit below" is where the thesis would be broken. A chip appears when the price reaches either level.</p>'
+            '<p><b>Base targets</b> are the base-case values from the <a href="models.html">current holdings workbook</a>: what each business is worth if my base case plays out and I want to earn a full cost of capital (a 5.3% Treasury plus a 5% equity premium, scaled by risk). '
+            'They are bear-leaning by design, and a price above the target does not mean I am selling. It means the stock now offers less than that return; the workbook shows how much less. Funds have weight ranges instead. Purchase dates are not shown.</p>'
             "<p>Trades are posted after they are filled, not before.</p></div>")
 
 
@@ -531,11 +540,13 @@ def build():
         ("Memory_Storage_DCF.xlsx", "Memory and storage", "Micron, SK hynix, Seagate and Western Digital. Five-year scenario DCFs with a terminal value, built for cyclical businesses.", "memory-and-storage"),
         ("Power_ChipEquipment_DCF.xlsx", "Power and chip equipment", "TSMC, ASML, Applied Materials, Vertiv, Siemens Energy and nVent. Ten-year DCFs with a five-year fade to terminal levels.", "power-and-chip-equipment"),
         ("Optical_Networking_DCF.xlsx", "Optical networking", "Coherent and Fabrinet, on the same ten-year framework.", "optical-networking"),
+        ("Current_Holdings_DCF.xlsx", "Current holdings", "The 13 stocks I own: ten-year DCFs for ten companies, residual income for JPMorgan and Bank of America, and a probability-weighted value for TMC. The source of the base targets on the positions page.", None),
     ]
     cards = []
     for f, t, d, slug in models:
         dl = (f'<span class="dl muted">Download on the published site</span>' if ARTIFACT else f'<a class="dl" href="models/{f}" download>Download {f}</a>')
-        cards.append(f'<div class="card"><h3>{E(t)}</h3><p>{E(d)}</p><p><a href="journal/{slug}.html">Read the entry</a></p>{dl}</div>')
+        rd = f'<a href="journal/{slug}.html">Read the entry</a>' if slug else '<a href="positions.html">See the positions</a>'
+        cards.append(f'<div class="card"><h3>{E(t)}</h3><p>{E(d)}</p><p>{rd}</p>{dl}</div>')
     mp = ('<section class="page"><div class="sect-head"><h1>Models</h1></div>'
           '<p class="lede">The Excel workbooks behind the valuations, with live formulas. Blue cells are inputs. Each workbook has a WACC tab with a switch between a CAPM-calculated discount rate and my assumed rate.</p></section>'
           f'<div class="cards">{"".join(cards)}</div>'

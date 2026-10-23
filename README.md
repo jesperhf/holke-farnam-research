@@ -9,7 +9,7 @@ A static investment journal with a live business cycle tracker. It is hosted fre
 | `content/journal/` | Journal entries in Markdown. One file per entry, with the date, title, summary, stance and tickers at the top. |
 | `content/updates/` | Dated updates to past entries. Entries themselves are never edited after publishing. |
 | `content/calls.json` | Every published call (price at publication, bear, base and bull values, buy level). Add rows; never edit old ones. |
-| `content/positions.json` | Your positions as percentages of the portfolio, with average cost, exit levels, closed positions and a trade log. Drives the Positions page and every entry's disclosure. Never put dollar amounts or share counts here. |
+| `content/positions.json` | Your positions as percentages of the portfolio, with average cost, base target (`target`), exit levels (`trimAbove`, `exitBelow`, `exitPlan`), closed positions and a trade log. Base targets come from `models/Current_Holdings_DCF.xlsx`. Drives the Positions page and every entry's disclosure. Never put dollar amounts or share counts here. |
 | `content/site.json` | Site name, tagline, bio and links. |
 | `models/` | The Excel workbooks offered for download. |
 | `data/cycle.json` | Business cycle reading and history, rewritten daily from FRED. |
