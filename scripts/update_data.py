@@ -421,8 +421,9 @@ def yahoo_price(symbol):
     ts = meta.get("regularMarketTime")
     if price is None:
         raise RuntimeError("no regularMarketPrice")
-    date = dt.datetime.fromtimestamp(ts, dt.timezone.utc).date().isoformat() if ts else None
-    return {"price": float(price), "date": date, "source": "Yahoo Finance"}
+    when = dt.datetime.fromtimestamp(ts, dt.timezone.utc) if ts else None
+    return {"price": float(price), "date": when.date().isoformat() if when else None,
+            "time": when.isoformat(timespec="minutes") if when else None, "source": "Yahoo Finance"}
 
 
 def stooq_price(symbol):
@@ -480,11 +481,16 @@ def update_prices():
 def main():
     os.makedirs(DATA, exist_ok=True)
     ok = True
+    prices_only = "--prices-only" in sys.argv
     try:
+        if prices_only:
+            raise StopIteration
         raw = {s: fred(s) for s in SERIES_IDS}
         cycle = build_cycle(raw)
         json.dump(cycle, open(os.path.join(DATA, "cycle.json"), "w"), indent=1)
         print("cycle:", cycle["latest"].get("position"), cycle["latest"].get("phase"), len(cycle["history"]), "months")
+    except StopIteration:
+        pass
     except Exception as e:
         ok = False
         print(f"cycle update failed, keeping the previous file: {e}", file=sys.stderr)

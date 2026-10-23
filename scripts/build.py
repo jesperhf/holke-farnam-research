@@ -242,7 +242,7 @@ def fmt_open(v, snap=None):
 
 def pos_price(ticker):
     p = PRICES.get("prices", {}).get("pos:" + ticker.upper())
-    return (p["price"], p.get("date")) if p else (None, None)
+    return (p["price"], when_label(p)) if p else (None, None)
 
 
 def current_weights():
@@ -271,7 +271,7 @@ def positions_page():
     rows = sorted(BOOK.get("positions", []), key=lambda p: -w.get(p["ticker"], 0))
     top5 = sum(sorted(w.values(), reverse=True)[:5])
     biggest = max(w.values()) if w else 0
-    strip = ('<div class="verdict"><div><div class="eyebrow">Snapshot ' + E(long_date(snap)) + '</div>'
+    strip = ('<div class="verdict"><div><div class="eyebrow">Snapshot ' + E(long_date(snap)) + " · " + E(price_stamp().split(" · ")[0]) + '</div>'
              f'<div class="phase-name">{len(rows)} positions</div><p>Weights below are estimated for today: each snapshot weight moves with its share price since the snapshot, and cash is held constant.</p></div>'
              f'<div><div class="metrics"><div><b>{biggest:.1f}%</b><span>Largest position</span></div><div><b>{top5:.0f}%</b><span>Top five combined</span></div>'
              f'<div><b>{cash_now:.1f}%</b><span>Cash</span></div></div></div></div>')
@@ -337,9 +337,32 @@ def positions_page():
             "<p>Trades are posted after they are filled, not before.</p></div>")
 
 
+def when_label(p):
+    """'11:15 AM ET' for a price from today's session, else the date."""
+    from zoneinfo import ZoneInfo
+    t = p.get("time")
+    if not t:
+        return p.get("date")
+    et = dt.datetime.fromisoformat(t).astimezone(ZoneInfo("America/New_York"))
+    now = dt.datetime.now(ZoneInfo("America/New_York"))
+    if et.date() == now.date():
+        return et.strftime("%-I:%M %p ET")
+    return short_date(et.date().isoformat())
+
+
+def price_stamp():
+    from zoneinfo import ZoneInfo
+    times = [p["time"] for p in PRICES.get("prices", {}).values() if p.get("time")]
+    if not times:
+        g = PRICES.get("generated")
+        return f"Prices updated {long_date(g)}" if g else "Prices appear after the first update"
+    et = max(dt.datetime.fromisoformat(t) for t in times).astimezone(ZoneInfo("America/New_York"))
+    return f"Prices as of {MONTHS[et.month - 1][:3]} {et.day}, {et.strftime('%-I:%M %p')} ET · refreshed every 15 minutes in market hours"
+
+
 def latest_price(c):
     p = PRICES.get("prices", {}).get(c["id"])
-    return (p["price"], p.get("date")) if p else (None, None)
+    return (p["price"], when_label(p)) if p else (None, None)
 
 
 def money(v, ccy):
@@ -463,7 +486,7 @@ def build():
         f'<svg id="gauge-svg" viewBox="0 0 400 132" role="img" aria-label="Business cycle curve with the current reading marked"></svg>'
         f'<small id="gauge-meta">{E(meta)}</small></a></section>'
         f'<section class="sect"><div class="sect-head"><h2>Watchlist</h2><a href="scorecard.html">All calls and how they are doing</a></div>'
-        f'<p class="muted" style="font-family:var(--f-ui);font-size:15px;margin:0">No positions at today\'s prices. These are the levels where my base case earns its required return.</p>'
+        f'<p class="muted" style="font-family:var(--f-ui);font-size:15px;margin:0">No new positions at today\'s prices. These are the levels where my base case earns its required return. {E(price_stamp())}.</p>'
         + calls_table(watch, compact=True).replace("{root}", "") + "</section>"
         f'<section class="sect"><div class="sect-head"><h2>Journal</h2><a href="journal/index.html">All entries</a></div>{entry_list(ents, "")}</section>')
     page("index.html", SITE["name"], home, "Home", scripts=("tracker.js",), description=latest["summary"])
@@ -494,7 +517,7 @@ def build():
     pg = PRICES.get("generated")
     sc = (
         '<section class="sect"><div class="sect-head"><h1>Scorecard</h1><span class="muted" style="font-family:var(--f-ui);font-size:14px">'
-        + (f"Prices updated {long_date(pg)}" if pg else "Latest prices appear after the first daily update") + "</span></div>"
+        + E(price_stamp()) + "</span></div>"
         '<p class="lede">Every call as first published, next to where the stock trades now. Rows are never edited. When my view on a company changes, I add a new row with a new date.</p>'
         + calls_table(CALLS).replace("{root}", "") +
         '<div class="notes"><p><b>Reading the table.</b> "Buy below" is the price at which my base case earns my required return. "Gap to buy level" is how far the stock would have to fall to reach it. '
