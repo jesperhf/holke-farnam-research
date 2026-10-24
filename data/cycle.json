@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T17:39+00:00",
+ "generated": "2026-10-24T12:56+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -92,8 +92,8 @@
     "rule": "Inverted: Late. Positive but inverted at some point in the past 6 months: Contraction. Above +150 bp: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/T10Y3M",
     "period": "October 2026 average",
-    "value": 0.9480000000000001,
-    "display": "+95 bp",
+    "value": 0.9375,
+    "display": "+94 bp",
     "context": "prior month +90 bp",
     "vote": "M"
    },
@@ -116,9 +116,9 @@
     "rule": "2.5% or above: Late. 0.5% or below: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/DFII10",
     "period": "October 2026 average",
-    "value": 2.8521428571428573,
-    "display": "2.85%",
-    "context": "nominal 10-year 5.20%",
+    "value": 2.838,
+    "display": "2.84%",
+    "context": "nominal 10-year 5.19%",
     "vote": "L"
    },
    {
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-10-23"
+  "asOf": "2026-10-24"
  },
  "history": [
   {
