@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T12:56+00:00",
+ "generated": "2026-10-25T12:56+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-10-24"
+  "asOf": "2026-10-25"
  },
  "history": [
   {
