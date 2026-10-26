@@ -205,7 +205,8 @@
       "ticker": "NOW",
       "from": 5.02,
       "to": 3.25,
-      "note": "Sold about a third (35%) after the price passed the $150 trim level, the bull-case value in the holdings workbook. The rest stays under the same exit plan."
+      "note": "Sold about a third (35%) after the price passed the $150 trim level, the bull-case value in the holdings workbook. The rest stays under the same exit plan.",
+      "price": 157.145
     }
   ],
   "targetsAsOf": "2026-10-23",
