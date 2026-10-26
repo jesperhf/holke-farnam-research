@@ -1,13 +1,13 @@
 {
   "note": "Percentages and per-share prices only. Never store dollar amounts or share counts in this file: the repository is public.",
   "account": "Personal brokerage account",
-  "snapshot": "2026-10-23",
-  "cash": 15.39,
+  "snapshot": "2026-10-26",
+  "cash": 17.22,
   "positions": [
     {
       "ticker": "MO",
-      "weight": 8.71,
-      "snapPrice": 75.02,
+      "weight": 8.66,
+      "snapPrice": 74.31,
       "avgCost": 61.3705,
       "name": "Altria",
       "type": "Equity",
@@ -18,8 +18,8 @@
     },
     {
       "ticker": "KO",
-      "weight": 8.41,
-      "snapPrice": 93.305,
+      "weight": 8.39,
+      "snapPrice": 92.71,
       "avgCost": 63.637,
       "name": "Coca-Cola",
       "type": "Equity",
@@ -30,8 +30,8 @@
     },
     {
       "ticker": "GOOG",
-      "weight": 7.39,
-      "snapPrice": 320.0066,
+      "weight": 7.36,
+      "snapPrice": 317.28,
       "avgCost": 171.8387,
       "name": "Alphabet (Class C)",
       "type": "Equity",
@@ -42,8 +42,8 @@
     },
     {
       "ticker": "JCPI",
-      "weight": 7.15,
-      "snapPrice": 46.69,
+      "weight": 7.18,
+      "snapPrice": 46.73,
       "avgCost": 48.2986,
       "name": "JPMorgan Inflation Managed Bond ETF",
       "type": "ETFs & Closed End Funds",
@@ -51,8 +51,8 @@
     },
     {
       "ticker": "UNH",
-      "weight": 6.48,
-      "snapPrice": 423.49,
+      "weight": 6.42,
+      "snapPrice": 418.09,
       "avgCost": 245.9776,
       "name": "UnitedHealth Group",
       "type": "Equity",
@@ -63,8 +63,8 @@
     },
     {
       "ticker": "LNG",
-      "weight": 5.51,
-      "snapPrice": 297.695,
+      "weight": 5.55,
+      "snapPrice": 298.67,
       "avgCost": 192.6894,
       "name": "Cheniere Energy",
       "type": "Equity",
@@ -75,8 +75,8 @@
     },
     {
       "ticker": "NOW",
-      "weight": 4.93,
-      "snapPrice": 156.77,
+      "weight": 3.25,
+      "snapPrice": 158.96,
       "avgCost": 95.5426,
       "name": "ServiceNow",
       "type": "Equity",
@@ -87,8 +87,8 @@
     },
     {
       "ticker": "CLS",
-      "weight": 4.54,
-      "snapPrice": 266.575,
+      "weight": 4.45,
+      "snapPrice": 260.01,
       "avgCost": 344.725,
       "name": "Celestica",
       "type": "Equity",
@@ -99,8 +99,8 @@
     },
     {
       "ticker": "EPD",
-      "weight": 4.41,
-      "snapPrice": 37.37,
+      "weight": 4.39,
+      "snapPrice": 37.08,
       "avgCost": 32.067,
       "name": "Enterprise Products Partners",
       "type": "Equity",
@@ -111,8 +111,8 @@
     },
     {
       "ticker": "HYBL",
-      "weight": 4.12,
-      "snapPrice": 27.32,
+      "weight": 4.14,
+      "snapPrice": 27.34,
       "avgCost": 28.4031,
       "name": "State Street Blackstone High Income ETF",
       "type": "ETFs & Closed End Funds",
@@ -120,8 +120,8 @@
     },
     {
       "ticker": "NVDA",
-      "weight": 3.94,
-      "snapPrice": 212.9,
+      "weight": 3.92,
+      "snapPrice": 210.96,
       "avgCost": 126.944,
       "name": "Nvidia",
       "type": "Equity",
@@ -132,8 +132,8 @@
     },
     {
       "ticker": "VGK",
-      "weight": 3.84,
-      "snapPrice": 86.39,
+      "weight": 3.85,
+      "snapPrice": 86.25,
       "avgCost": 74.4304,
       "name": "Vanguard FTSE Europe ETF",
       "type": "ETFs & Closed End Funds",
@@ -142,7 +142,7 @@
     {
       "ticker": "BAC",
       "weight": 3.78,
-      "snapPrice": 50.7252,
+      "snapPrice": 50.56,
       "avgCost": 38.2819,
       "name": "Bank of America",
       "type": "Equity",
@@ -153,8 +153,8 @@
     },
     {
       "ticker": "JPM",
-      "weight": 3.41,
-      "snapPrice": 331.84,
+      "weight": 3.42,
+      "snapPrice": 331.58,
       "avgCost": 241.4877,
       "name": "JPMorgan Chase",
       "type": "Equity",
@@ -165,8 +165,8 @@
     },
     {
       "ticker": "XBI",
-      "weight": 3.33,
-      "snapPrice": 149.865,
+      "weight": 3.34,
+      "snapPrice": 149.54,
       "avgCost": 87.5467,
       "name": "SPDR S&P Biotech ETF",
       "type": "ETFs & Closed End Funds",
@@ -174,8 +174,8 @@
     },
     {
       "ticker": "FSLR",
-      "weight": 2.86,
-      "snapPrice": 171.565,
+      "weight": 2.88,
+      "snapPrice": 171.99,
       "avgCost": 173.3144,
       "name": "First Solar",
       "type": "Equity",
@@ -187,7 +187,7 @@
     {
       "ticker": "TMC",
       "weight": 1.8,
-      "snapPrice": 2.435,
+      "snapPrice": 2.43,
       "avgCost": 1.486,
       "name": "TMC the metals company",
       "type": "Equity",
@@ -198,7 +198,16 @@
     }
   ],
   "closed": [],
-  "trades": [],
+  "trades": [
+    {
+      "date": "2026-10-26",
+      "action": "Trim",
+      "ticker": "NOW",
+      "from": 5.02,
+      "to": 3.25,
+      "note": "Sold about a third (35%) after the price passed the $150 trim level, the bull-case value in the holdings workbook. The rest stays under the same exit plan."
+    }
+  ],
   "targetsAsOf": "2026-10-23",
   "levelsAsOf": "2026-10-23"
 }
