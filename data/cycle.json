@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T12:56+00:00",
+ "generated": "2026-10-26T14:49+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -55,9 +55,9 @@
     "series": "CFNAIMA3",
     "rule": "At or below -0.70: Contraction. Below -0.35: Late. Above +0.20 within a year of a reading at or below -0.70: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/CFNAIMA3",
-    "period": "August 2026",
-    "value": 0.01,
-    "display": "+0.01",
+    "period": "September 2026",
+    "value": 0.03,
+    "display": "+0.03",
     "context": "12-month low -0.39",
     "vote": "M"
    },
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-10-25"
+  "asOf": "2026-10-26"
  },
  "history": [
   {
@@ -2351,8 +2351,8 @@
   },
   {
    "m": "2026-09",
-   "pos": 51.0,
-   "n": 10
+   "pos": 50.0,
+   "n": 11
   },
   {
    "m": "2026-10",
