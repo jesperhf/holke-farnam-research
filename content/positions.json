@@ -94,8 +94,9 @@
       "type": "Equity",
       "target": 200,
       "exitPlan": "Sell if a major hyperscaler cuts capex, or if 2027 revenue guidance comes in below 2026. The first position to cut if a contraction starts.",
-      "trimAbove": 305,
-      "exitBelow": 155
+      "trimAbove": 315,
+      "exitBelow": 160,
+      "entry": "celestica-q3-2026"
     },
     {
       "ticker": "EPD",
