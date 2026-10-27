@@ -14,7 +14,50 @@
       "target": 63,
       "exitPlan": "Sell on a dividend cut, or if cigarette volumes fall more than about 8% a year without price increases to offset them.",
       "trimAbove": 83,
-      "exitBelow": 53
+      "exitBelow": 53,
+      "valueCurve": [
+        [
+          0.05,
+          99.53
+        ],
+        [
+          0.06,
+          83.66
+        ],
+        [
+          0.07,
+          72.02
+        ],
+        [
+          0.08,
+          63.12
+        ],
+        [
+          0.09,
+          56.08
+        ],
+        [
+          0.1,
+          50.38
+        ],
+        [
+          0.11,
+          45.67
+        ],
+        [
+          0.12,
+          41.71
+        ],
+        [
+          0.13,
+          38.33
+        ],
+        [
+          0.14,
+          35.42
+        ]
+      ],
+      "requiredReturn": 0.08
     },
     {
       "ticker": "KO",
@@ -26,7 +69,50 @@
       "target": 72,
       "exitPlan": "Sell if organic growth is below 3% for two quarters in a row, or if North American volumes decline.",
       "trimAbove": 92,
-      "exitBelow": 63
+      "exitBelow": 63,
+      "valueCurve": [
+        [
+          0.05,
+          162.76
+        ],
+        [
+          0.06,
+          108.3
+        ],
+        [
+          0.07,
+          81.07
+        ],
+        [
+          0.08,
+          64.74
+        ],
+        [
+          0.09,
+          53.84
+        ],
+        [
+          0.1,
+          46.06
+        ],
+        [
+          0.11,
+          40.23
+        ],
+        [
+          0.12,
+          35.69
+        ],
+        [
+          0.13,
+          32.06
+        ],
+        [
+          0.14,
+          29.08
+        ]
+      ],
+      "requiredReturn": 0.075
     },
     {
       "ticker": "GOOG",
@@ -38,7 +124,50 @@
       "target": 255,
       "exitPlan": "Sell if search revenue growth turns negative, or if Cloud operating margin falls while capex keeps rising.",
       "trimAbove": 325,
-      "exitBelow": 200
+      "exitBelow": 200,
+      "valueCurve": [
+        [
+          0.05,
+          1441.25
+        ],
+        [
+          0.06,
+          714.45
+        ],
+        [
+          0.07,
+          472.5
+        ],
+        [
+          0.08,
+          351.75
+        ],
+        [
+          0.09,
+          279.47
+        ],
+        [
+          0.1,
+          231.42
+        ],
+        [
+          0.11,
+          197.2
+        ],
+        [
+          0.12,
+          171.63
+        ],
+        [
+          0.13,
+          151.81
+        ],
+        [
+          0.14,
+          136.02
+        ]
+      ],
+      "requiredReturn": 0.095
     },
     {
       "ticker": "JCPI",
@@ -59,7 +188,50 @@
       "target": 475,
       "exitPlan": "Sell if the medical care ratio goes back above 90% excluding reserve releases, or if 2027 EPS guidance comes in below $22.",
       "trimAbove": 695,
-      "exitBelow": 390
+      "exitBelow": 390,
+      "valueCurve": [
+        [
+          0.05,
+          2557.95
+        ],
+        [
+          0.06,
+          1255.54
+        ],
+        [
+          0.07,
+          821.38
+        ],
+        [
+          0.08,
+          604.3
+        ],
+        [
+          0.09,
+          474.03
+        ],
+        [
+          0.1,
+          387.19
+        ],
+        [
+          0.11,
+          325.15
+        ],
+        [
+          0.12,
+          278.63
+        ],
+        [
+          0.13,
+          242.43
+        ],
+        [
+          0.14,
+          213.48
+        ]
+      ],
+      "requiredReturn": 0.09
     },
     {
       "ticker": "LNG",
@@ -71,7 +243,50 @@
       "target": 305,
       "exitPlan": "Sell on a cut to cash flow guidance, or if new long-term contracting stalls as the 2027 to 2028 LNG supply wave arrives.",
       "trimAbove": 440,
-      "exitBelow": 220
+      "exitBelow": 220,
+      "valueCurve": [
+        [
+          0.05,
+          678.56
+        ],
+        [
+          0.06,
+          479.26
+        ],
+        [
+          0.07,
+          352.54
+        ],
+        [
+          0.08,
+          264.91
+        ],
+        [
+          0.09,
+          200.72
+        ],
+        [
+          0.1,
+          151.7
+        ],
+        [
+          0.11,
+          113.06
+        ],
+        [
+          0.12,
+          81.83
+        ],
+        [
+          0.13,
+          56.08
+        ],
+        [
+          0.14,
+          34.48
+        ]
+      ],
+      "requiredReturn": 0.075
     },
     {
       "ticker": "NOW",
@@ -83,7 +298,50 @@
       "target": 105,
       "exitPlan": "Sell if subscription revenue or current remaining performance obligations grow less than 15%.",
       "trimAbove": 150,
-      "exitBelow": 81
+      "exitBelow": 81,
+      "valueCurve": [
+        [
+          0.05,
+          618.31
+        ],
+        [
+          0.06,
+          303.33
+        ],
+        [
+          0.07,
+          198.53
+        ],
+        [
+          0.08,
+          146.26
+        ],
+        [
+          0.09,
+          115.0
+        ],
+        [
+          0.1,
+          94.23
+        ],
+        [
+          0.11,
+          79.46
+        ],
+        [
+          0.12,
+          68.44
+        ],
+        [
+          0.13,
+          59.9
+        ],
+        [
+          0.14,
+          53.11
+        ]
+      ],
+      "requiredReturn": 0.095
     },
     {
       "ticker": "CLS",
@@ -96,7 +354,50 @@
       "exitPlan": "Sell if a major hyperscaler cuts capex, or if 2027 revenue guidance comes in below 2026. The first position to cut if a contraction starts.",
       "trimAbove": 315,
       "exitBelow": 160,
-      "entry": "celestica-q3-2026"
+      "entry": "celestica-q3-2026",
+      "valueCurve": [
+        [
+          0.05,
+          704.39
+        ],
+        [
+          0.06,
+          474.46
+        ],
+        [
+          0.07,
+          359.52
+        ],
+        [
+          0.08,
+          290.57
+        ],
+        [
+          0.09,
+          244.62
+        ],
+        [
+          0.1,
+          211.81
+        ],
+        [
+          0.11,
+          187.22
+        ],
+        [
+          0.12,
+          168.1
+        ],
+        [
+          0.13,
+          152.81
+        ],
+        [
+          0.14,
+          140.31
+        ]
+      ],
+      "requiredReturn": 0.105
     },
     {
       "ticker": "EPD",
@@ -108,7 +409,50 @@
       "target": 35,
       "exitPlan": "Sell on a distribution cut, or if distribution coverage falls below 1.3 times.",
       "trimAbove": 48,
-      "exitBelow": 28
+      "exitBelow": 28,
+      "valueCurve": [
+        [
+          0.05,
+          85.11
+        ],
+        [
+          0.06,
+          60.0
+        ],
+        [
+          0.07,
+          44.93
+        ],
+        [
+          0.08,
+          34.88
+        ],
+        [
+          0.09,
+          27.7
+        ],
+        [
+          0.1,
+          22.32
+        ],
+        [
+          0.11,
+          18.13
+        ],
+        [
+          0.12,
+          14.78
+        ],
+        [
+          0.13,
+          12.04
+        ],
+        [
+          0.14,
+          9.76
+        ]
+      ],
+      "requiredReturn": 0.08
     },
     {
       "ticker": "HYBL",
@@ -129,7 +473,50 @@
       "target": 165,
       "exitPlan": "Sell if any hyperscaler guides 2027 capex flat or down, or if gross margin falls below 70%.",
       "trimAbove": 235,
-      "exitBelow": 130
+      "exitBelow": 130,
+      "valueCurve": [
+        [
+          0.05,
+          782.74
+        ],
+        [
+          0.06,
+          474.37
+        ],
+        [
+          0.07,
+          342.11
+        ],
+        [
+          0.08,
+          268.56
+        ],
+        [
+          0.09,
+          221.7
+        ],
+        [
+          0.1,
+          189.22
+        ],
+        [
+          0.11,
+          165.36
+        ],
+        [
+          0.12,
+          147.09
+        ],
+        [
+          0.13,
+          132.64
+        ],
+        [
+          0.14,
+          120.92
+        ]
+      ],
+      "requiredReturn": 0.11
     },
     {
       "ticker": "VGK",
@@ -150,7 +537,50 @@
       "target": 54,
       "exitPlan": "Sell if return on tangible equity is below 12% excluding one-offs, or if expenses outgrow revenue for two more quarters.",
       "trimAbove": 63,
-      "exitBelow": 45
+      "exitBelow": 45,
+      "valueCurve": [
+        [
+          0.05,
+          380.16
+        ],
+        [
+          0.06,
+          187.19
+        ],
+        [
+          0.07,
+          123.03
+        ],
+        [
+          0.08,
+          91.06
+        ],
+        [
+          0.09,
+          71.97
+        ],
+        [
+          0.1,
+          59.3
+        ],
+        [
+          0.11,
+          50.3
+        ],
+        [
+          0.12,
+          43.58
+        ],
+        [
+          0.13,
+          38.39
+        ],
+        [
+          0.14,
+          34.26
+        ]
+      ],
+      "requiredReturn": 0.105
     },
     {
       "ticker": "JPM",
@@ -162,7 +592,50 @@
       "target": 260,
       "exitPlan": "Sell if return on tangible equity falls below 15%, or if net charge-offs rise quickly.",
       "trimAbove": 315,
-      "exitBelow": 225
+      "exitBelow": 225,
+      "valueCurve": [
+        [
+          0.05,
+          1700.61
+        ],
+        [
+          0.06,
+          832.38
+        ],
+        [
+          0.07,
+          544.12
+        ],
+        [
+          0.08,
+          400.77
+        ],
+        [
+          0.09,
+          315.31
+        ],
+        [
+          0.1,
+          258.75
+        ],
+        [
+          0.11,
+          218.67
+        ],
+        [
+          0.12,
+          188.86
+        ],
+        [
+          0.13,
+          165.88
+        ],
+        [
+          0.14,
+          147.65
+        ]
+      ],
+      "requiredReturn": 0.1
     },
     {
       "ticker": "XBI",
@@ -183,7 +656,50 @@
       "target": 125,
       "exitPlan": "Sell if the backlog falls below 35 GW, or if the Section 45X credits change.",
       "trimAbove": 190,
-      "exitBelow": 99
+      "exitBelow": 99,
+      "valueCurve": [
+        [
+          0.05,
+          291.77
+        ],
+        [
+          0.06,
+          223.95
+        ],
+        [
+          0.07,
+          185.78
+        ],
+        [
+          0.08,
+          161.13
+        ],
+        [
+          0.09,
+          143.77
+        ],
+        [
+          0.1,
+          130.81
+        ],
+        [
+          0.11,
+          120.71
+        ],
+        [
+          0.12,
+          112.57
+        ],
+        [
+          0.13,
+          105.85
+        ],
+        [
+          0.14,
+          100.19
+        ]
+      ],
+      "requiredReturn": 0.105
     },
     {
       "ticker": "TMC",
