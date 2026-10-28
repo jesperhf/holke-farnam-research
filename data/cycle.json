@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-28T16:28+00:00",
+ "generated": "2026-10-28T20:01+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -128,8 +128,8 @@
     "rule": "Up 40% or more: Late. Down 30% or more: Contraction. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
     "period": "October 2026 average",
-    "value": 93.61146129047779,
-    "display": "+94%",
+    "value": 93.40451330414281,
+    "display": "+93%",
     "context": "monthly average $125",
     "vote": "L"
    },

@@ -1,34 +1,34 @@
 {
- "generated": "2026-10-28T16:28+00:00",
+ "generated": "2026-10-28T20:01+00:00",
  "prices": {
   "tsm": {
-   "price": 438.62,
+   "price": 439.57,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "nvt": {
-   "price": 139.49,
+   "price": 140.15,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "fn": {
-   "price": 364.635,
+   "price": 367.36,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "asml": {
-   "price": 1661.54,
+   "price": 1662.85,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "vrt": {
-   "price": 237.53,
+   "price": 243.1,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "skh": {
@@ -38,183 +38,195 @@
    "source": "Yahoo Finance"
   },
   "mu": {
-   "price": 972.5,
+   "price": 983.23,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "stx": {
-   "price": 683.795,
+   "price": 697.97,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "wdc": {
-   "price": 393.913,
+   "price": 396.42,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "amat": {
-   "price": 414.01,
+   "price": 416.0,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "enr": {
-   "price": 133.18,
+   "price": 133.26,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:13+00:00",
+   "time": "2026-10-28T16:35+00:00",
    "source": "Yahoo Finance"
   },
   "cohr": {
-   "price": 236.34,
+   "price": 239.625,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "cls-2026-10": {
-   "price": 296.69,
+   "price": 300.08,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "abt": {
-   "price": 103.12,
+   "price": 102.67,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "mdt": {
-   "price": 94.88,
+   "price": 94.82,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "bdx": {
-   "price": 194.11,
+   "price": 195.175,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:27+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "mrk": {
-   "price": 140.26,
+   "price": 141.035,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "uber": {
-   "price": 65.66,
+   "price": 65.28,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "nflx": {
-   "price": 61.875,
+   "price": 61.99,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "pos:MO": {
-   "price": 73.54,
+   "price": 72.98,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "pos:KO": {
    "price": 91.85,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:GOOG": {
-   "price": 320.29,
+   "price": 321.89,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "pos:JCPI": {
-   "price": 46.676,
+   "price": 46.75,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:25+00:00",
+   "time": "2026-10-28T19:55+00:00",
    "source": "Yahoo Finance"
   },
   "pos:UNH": {
-   "price": 412.575,
+   "price": 407.25,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:LNG": {
-   "price": 300.02,
+   "price": 297.67,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:NOW": {
-   "price": 150.81,
+   "price": 149.855,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "pos:CLS": {
-   "price": 296.69,
+   "price": 300.08,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:EPD": {
-   "price": 37.75,
+   "price": 38.08,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "pos:HYBL": {
-   "price": 27.465,
+   "price": 27.475,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:27+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:NVDA": {
-   "price": 217.075,
+   "price": 215.38,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "pos:VGK": {
-   "price": 87.095,
+   "price": 87.315,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:BAC": {
-   "price": 51.09,
+   "price": 50.87,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:JPM": {
-   "price": 339.83,
+   "price": 339.5,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:XBI": {
-   "price": 155.8,
+   "price": 157.5,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T19:59+00:00",
    "source": "Yahoo Finance"
   },
   "pos:FSLR": {
-   "price": 175.255,
+   "price": 176.3,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   },
   "pos:TMC": {
-   "price": 2.725,
+   "price": 2.8,
    "date": "2026-10-28",
-   "time": "2026-10-28T16:28+00:00",
+   "time": "2026-10-28T20:00+00:00",
+   "source": "Yahoo Finance"
+  },
+  "pos:NBIS": {
+   "price": 182.34,
+   "date": "2026-10-28",
+   "time": "2026-10-28T20:00+00:00",
+   "source": "Yahoo Finance"
+  },
+  "pos:MDT": {
+   "price": 94.82,
+   "date": "2026-10-28",
+   "time": "2026-10-28T20:00+00:00",
    "source": "Yahoo Finance"
   }
  },
