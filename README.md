@@ -16,6 +16,7 @@ A static investment journal with a live business cycle tracker. It is hosted fre
 | `data/prices.json` | Latest prices for the scorecard, rewritten daily (best effort). |
 | `scripts/update_data.py` | Pulls FRED series and prices. Standard library only. |
 | `tools/import_schwab.py` | Converts a Schwab positions export into `positions.json`, writing percentages only. The CSV itself is never committed. |
+| `tools/update_risk_free.py` | Weekly discount-rate update: `python tools/update_risk_free.py 0.0495 2026-11-04` sets the 10-year Treasury yield in every holdings workbook, moves each assumed discount rate by the same amount, recalculates, and refreshes base values and levels in `positions.json`. Moves under 0.10 points are ignored. |
 | `scripts/build.py` | Turns everything above into the site in `_site/`. Needs `pip install markdown`. |
 | `.github/workflows/site.yml` | The daily job: refresh data, build, publish. |
 
