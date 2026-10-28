@@ -82,11 +82,11 @@ def entries():
     return sorted(out, key=lambda e: (e["written"], part(e)), reverse=True)
 
 
-def md(text):
+def md(text, asof=None):
     h = markdown.markdown(text, extensions=["tables", "sane_lists"])
     h = h.replace("<table>", '<div class="table-box"><table>').replace("</table>", "</table></div>")
     h = re.sub(r'<a href="(https?://[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', h)
-    h = h.replace("<p>{{chart:value-vs-price}}</p>", value_chart())
+    h = h.replace("<p>{{chart:value-vs-price}}</p>", value_chart(asof))
     h = h.replace("<p>{{diagram:chain}}</p>", chain_diagram())
     return h
 
@@ -97,8 +97,10 @@ def pct(v):
     return ("+" if r > 0 else "\u2212" if r < 0 else "") + f"{abs(r)}%"
 
 
-def value_chart():
-    rows = sorted(CALLS, key=lambda c: c["base"] / c["price"], reverse=True)
+def value_chart(asof=None):
+    # only the calls published by the entry's date, so a locked entry keeps its chart
+    pool = [c for c in CALLS if asof is None or c["published"] <= asof]
+    rows = sorted(pool, key=lambda c: c["base"] / c["price"], reverse=True)
     lo, hi, x0, x1 = -60, 80, 150, 740
     X = lambda v: x0 + (v - lo) / (hi - lo) * (x1 - x0)
     y0, pitch = 48, 28
@@ -529,7 +531,7 @@ def build():
                 f'<h1>{E(e["title"])}</h1><p class="lede">{E(e["summary"])}</p>'
                 f'<div class="meta"><span>Written {long_date(e["written"])}</span><span>Published {long_date(e["published"])}</span>{stance_chip(e.get("stance"))}</div>'
                 f'<div class="lock"><span>This entry is locked as written. Prices and figures are as of the dates in the text. Later thinking goes in the updates at the end.</span></div></header>'
-                f'<div class="prose">{md(e["body"])}</div>{upd}{disclosure_html(e)}'
+                f'<div class="prose">{md(e["body"], e["published"])}</div>{upd}{disclosure_html(e)}'
                 f'<nav class="pager" aria-label="More entries"><span>{pager_link(newer, "Newer")}</span><span>{pager_link(older, "Older")}</span></nav></article>')
         page(f'journal/{e["slug"]}.html', e["title"], body, "Journal", description=e["summary"])
 
@@ -558,7 +560,7 @@ def build():
         f'<svg id="gauge-svg" viewBox="0 0 400 132" role="img" aria-label="Business cycle curve with the current reading marked"></svg>'
         f'<small id="gauge-meta">{E(meta)}</small></a></section>'
         f'<section class="sect"><div class="sect-head"><h2>Watchlist</h2><a href="scorecard.html">All calls and how they are doing</a></div>'
-        f'<p class="muted" style="font-family:var(--f-ui);font-size:15px;margin:0">No new positions at today\'s prices. These are the levels where my base case earns its required return. {E(price_stamp())}.</p>'
+        f'<p class="muted" style="font-family:var(--f-ui);font-size:15px;margin:0">These are the levels where my base case earns its required return, or the lower price I am waiting for where the bear case is far below the price. {E(price_stamp())}.</p>'
         + calls_table(watch, compact=True).replace("{root}", "") + "</section>"
         f'<section class="sect"><div class="sect-head"><h2>Journal</h2><a href="journal/index.html">All entries</a></div>{entry_list(ents, "")}</section>')
     page("index.html", SITE["name"], home, "Home", scripts=("tracker.js",), description=latest["summary"])
@@ -603,6 +605,9 @@ def build():
         ("Memory_Storage_DCF.xlsx", "Memory and storage", "Micron, SK hynix, Seagate and Western Digital. Five-year scenario DCFs with a terminal value, built for cyclical businesses.", "memory-and-storage"),
         ("Power_ChipEquipment_DCF.xlsx", "Power and chip equipment", "TSMC, ASML, Applied Materials, Vertiv, Siemens Energy and nVent. Ten-year DCFs with a five-year fade to terminal levels.", "power-and-chip-equipment"),
         ("Optical_Networking_DCF.xlsx", "Optical networking", "Coherent and Fabrinet, on the same ten-year framework.", "optical-networking"),
+        ("Healthcare_DCF.xlsx", "Healthcare", "Abbott, Medtronic, Becton Dickinson and Merck. Ten-year DCFs with a five-year fade to terminal levels.", "healthcare-in-a-late-cycle"),
+        ("UBER_Valuation.xlsx", "Uber", "Ten-year DCF on GAAP operating margins, with the robotaxi question as the bear and bull cases.", "uber-after-the-selloff"),
+        ("NFLX_Valuation.xlsx", "Netflix", "Ten-year DCF with content spend treated as reinvestment.", "netflix-after-the-selloff"),
     ]
     cards = []
     for f, t, d, slug in models:
