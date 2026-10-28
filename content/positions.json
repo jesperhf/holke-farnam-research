@@ -57,7 +57,8 @@
           35.42
         ]
       ],
-      "requiredReturn": 0.08
+      "requiredReturn": 0.08,
+      "model": "models/holdings/MO_Valuation.xlsx"
     },
     {
       "ticker": "KO",
@@ -112,7 +113,8 @@
           29.08
         ]
       ],
-      "requiredReturn": 0.075
+      "requiredReturn": 0.075,
+      "model": "models/holdings/KO_Valuation.xlsx"
     },
     {
       "ticker": "GOOG",
@@ -167,7 +169,8 @@
           136.02
         ]
       ],
-      "requiredReturn": 0.095
+      "requiredReturn": 0.095,
+      "model": "models/holdings/GOOG_Valuation.xlsx"
     },
     {
       "ticker": "JCPI",
@@ -231,7 +234,8 @@
           213.48
         ]
       ],
-      "requiredReturn": 0.09
+      "requiredReturn": 0.09,
+      "model": "models/holdings/UNH_Valuation.xlsx"
     },
     {
       "ticker": "LNG",
@@ -286,7 +290,8 @@
           34.48
         ]
       ],
-      "requiredReturn": 0.075
+      "requiredReturn": 0.075,
+      "model": "models/holdings/LNG_Valuation.xlsx"
     },
     {
       "ticker": "NOW",
@@ -341,7 +346,8 @@
           53.11
         ]
       ],
-      "requiredReturn": 0.095
+      "requiredReturn": 0.095,
+      "model": "models/holdings/NOW_Valuation.xlsx"
     },
     {
       "ticker": "CLS",
@@ -397,7 +403,8 @@
           140.31
         ]
       ],
-      "requiredReturn": 0.105
+      "requiredReturn": 0.105,
+      "model": "models/holdings/CLS_Valuation.xlsx"
     },
     {
       "ticker": "EPD",
@@ -452,7 +459,8 @@
           9.76
         ]
       ],
-      "requiredReturn": 0.08
+      "requiredReturn": 0.08,
+      "model": "models/holdings/EPD_Valuation.xlsx"
     },
     {
       "ticker": "HYBL",
@@ -516,7 +524,8 @@
           120.92
         ]
       ],
-      "requiredReturn": 0.11
+      "requiredReturn": 0.11,
+      "model": "models/holdings/NVDA_Valuation.xlsx"
     },
     {
       "ticker": "VGK",
@@ -580,7 +589,8 @@
           34.26
         ]
       ],
-      "requiredReturn": 0.105
+      "requiredReturn": 0.105,
+      "model": "models/holdings/BAC_Valuation.xlsx"
     },
     {
       "ticker": "JPM",
@@ -635,7 +645,8 @@
           147.65
         ]
       ],
-      "requiredReturn": 0.1
+      "requiredReturn": 0.1,
+      "model": "models/holdings/JPM_Valuation.xlsx"
     },
     {
       "ticker": "XBI",
@@ -699,7 +710,8 @@
           100.19
         ]
       ],
-      "requiredReturn": 0.105
+      "requiredReturn": 0.105,
+      "model": "models/holdings/FSLR_Valuation.xlsx"
     },
     {
       "ticker": "TMC",
@@ -711,7 +723,8 @@
       "target": 2.25,
       "exitPlan": "Sell it all on a permit denial or a ruling that blocks US seabed mining. Keep it under 2% of the portfolio.",
       "trimAbove": 4.0,
-      "exitBelow": 1.5
+      "exitBelow": 1.5,
+      "model": "models/holdings/TMC_Valuation.xlsx"
     }
   ],
   "closed": [],

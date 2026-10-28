@@ -275,6 +275,22 @@ def implied_return(curve, price):
     return None, ""
 
 
+def holdings_models_html():
+    rows = []
+    for p in sorted(BOOK.get("positions", []), key=lambda p: p.get("name") or p["ticker"]):
+        if not p.get("model"):
+            continue
+        meth = "Residual income" if p["ticker"] in ("JPM", "BAC") else ("Probability-weighted" if p["ticker"] == "TMC" else "10-year DCF")
+        dl = ('<span class="muted">Download on the published site</span>' if ARTIFACT
+              else f'<a href="{p["model"]}" download>{E(os.path.basename(p["model"]))}</a>')
+        rows.append(f'<tr><td><b>{E(p.get("name") or p["ticker"])}</b><span class="sub">{E(p["ticker"])}</span></td><td>{meth}</td><td>{dl}</td></tr>')
+    if not rows:
+        return ""
+    return ('<section class="sect"><h2>Holdings models</h2><p class="muted" style="font-family:var(--f-ui)">One workbook per stock I own: a summary with the exit plan levels, the model, and the discount-rate tab. '
+            'These are the source of the base values and live returns on the <a href="positions.html">positions page</a>. Funds have no model.</p>'
+            '<div class="table-box"><table class="calls"><thead><tr><th>Holding</th><th>Method</th><th>Workbook</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div></section>")
+
+
 def positions_page():
     snap = BOOK.get("snapshot")
     if not snap:
@@ -310,7 +326,12 @@ def positions_page():
                 flags.append('<span class="chip C">At exit level</span>')
         if p.get("exitPlan"):
             plan.append(E(p["exitPlan"]))
-        link = f'<a href="journal/{p["entry"]}.html">Research</a>' if p.get("entry") else '<span class="muted nowrap">No entry yet</span>'
+        links = []
+        if p.get("model"):
+            links.append(f'<a class="nowrap" href="{p["model"]}" download>Model</a>')
+        if p.get("entry"):
+            links.append(f'<a href="journal/{p["entry"]}.html">Research</a>')
+        link = "<br>".join(links) if links else '<span class="muted nowrap">No model (fund)</span>'
         is_fund = p.get("type") == "Fund" or p["ticker"] in ("JCPI", "HYBL", "VGK", "XBI")
         if p.get("target"):
             tgt = money(p["target"], ccy)
@@ -330,8 +351,11 @@ def positions_page():
         else:
             impl = '<span class="muted">' + ("Fund" if is_fund else "None") + "</span>"
         opened = fmt_open(p.get("opened"), snap)
+        nm = f'<b>{E(p.get("name") or p["ticker"])}</b>'
+        if p.get("model"):
+            nm = f'<a href="{p["model"]}" download title="Download the valuation workbook">{nm}</a>'
         trs.append(
-            f'<tr><td><b>{E(p.get("name") or p["ticker"])}</b><span class="sub">{E(p["ticker"])}</span></td>'
+            f'<tr><td>{nm}<span class="sub">{E(p["ticker"])}</span></td>'
             f'<td class="num"><div class="wbar"><i style="width:{min(wt, 100) / max(biggest, 1) * 100:.1f}%"></i></div>{wt:.1f}%<span class="sub">snapshot {p["weight"]:.1f}%</span></td>'
             f'<td class="num">{money(p["avgCost"], ccy) if p.get("avgCost") else "n/a"}</td>'
             f'<td class="num">{money(lp, ccy) if lp else "n/a"}' + (f'<span class="sub">{E(ld)}</span>' if ld else "") + "</td>"
@@ -367,7 +391,7 @@ def positions_page():
             + strip + open_tbl + "</section>" + closed_html + log +
             '<div class="notes"><p><b>How to read this.</b> Gain vs cost is the latest price against my average cost per share, before dividends. Exit levels are set in advance: '
             '"trim above" is the bull-case value, where I would sell about a third; "exit below" sits halfway between the bear and base values, where I reread the thesis and sell unless it still holds. A chip appears when the price reaches either level.</p>'
-            '<p><b>Base value</b> is the base-case value from the <a href="models.html">current holdings workbook</a>: what each business is worth if my base case plays out and I want to earn my full required return (a 5.3% Treasury plus a 5% equity premium, scaled by risk). It is not a forecast of where the stock will trade. <b>Return at today\'s price</b> runs the same model the other way: the annual return the base case earns if I buy at the latest price, recomputed whenever prices refresh. It shows in green when it clears the required return listed under it. A price above the base value still earns a positive return, just less than I require, so it is a reason not to add, not by itself a reason to sell. Funds have weight ranges instead, and TMC has a probability-weighted value. Purchase dates are not shown.</p>'
+            '<p><b>Base value</b> is the base-case value from that holding\'s own workbook (click the name, or see the <a href="models.html">models page</a>): what each business is worth if my base case plays out and I want to earn my full required return (a 5.3% Treasury plus a 5% equity premium, scaled by risk). It is not a forecast of where the stock will trade. <b>Return at today\'s price</b> runs the same model the other way: the annual return the base case earns if I buy at the latest price, recomputed whenever prices refresh. It shows in green when it clears the required return listed under it. A price above the base value still earns a positive return, just less than I require, so it is a reason not to add, not by itself a reason to sell. Funds have weight ranges instead, and TMC has a probability-weighted value. Purchase dates are not shown.</p>'
             "<p>Trades are posted after they are filled, not before.</p></div>")
 
 
@@ -565,7 +589,6 @@ def build():
         ("Memory_Storage_DCF.xlsx", "Memory and storage", "Micron, SK hynix, Seagate and Western Digital. Five-year scenario DCFs with a terminal value, built for cyclical businesses.", "memory-and-storage"),
         ("Power_ChipEquipment_DCF.xlsx", "Power and chip equipment", "TSMC, ASML, Applied Materials, Vertiv, Siemens Energy and nVent. Ten-year DCFs with a five-year fade to terminal levels.", "power-and-chip-equipment"),
         ("Optical_Networking_DCF.xlsx", "Optical networking", "Coherent and Fabrinet, on the same ten-year framework.", "optical-networking"),
-        ("Current_Holdings_DCF.xlsx", "Current holdings", "The 13 stocks I own: ten-year DCFs for ten companies, residual income for JPMorgan and Bank of America, and a probability-weighted value for TMC. The source of the base values on the positions page.", None),
     ]
     cards = []
     for f, t, d, slug in models:
@@ -575,6 +598,7 @@ def build():
     mp = ('<section class="page"><div class="sect-head"><h1>Models</h1></div>'
           '<p class="lede">The Excel workbooks behind the valuations, with live formulas. Blue cells are inputs. Each workbook has a WACC tab with a switch between a CAPM-calculated discount rate and my assumed rate.</p></section>'
           f'<div class="cards">{"".join(cards)}</div>'
+          + holdings_models_html() +
           '<div class="notes"><p>These are free cash flow models, not full three-statement builds. Free cash flow is operating income after tax, less net reinvestment and the working capital that growth absorbs. '
           'Every scenario path, margin and discount rate is my own assumption, set out where you can change it.</p></div>')
     page("models.html", "Models", mp, "Models", description="The valuation workbooks behind each journal entry.")
