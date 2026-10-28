@@ -1,0 +1,7 @@
+{
+  "note": "Valuation workbooks for names I am watching but do not own and have not published a call on.",
+  "models": [
+    {"name": "Uber Technologies", "ticker": "UBER", "file": "models/watchlist/UBER_Valuation.xlsx", "built": "2026-10-28", "method": "10-year DCF"},
+    {"name": "Netflix", "ticker": "NFLX", "file": "models/watchlist/NFLX_Valuation.xlsx", "built": "2026-10-28", "method": "10-year DCF"}
+  ]
+}

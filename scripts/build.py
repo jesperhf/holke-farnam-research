@@ -275,6 +275,20 @@ def implied_return(curve, price):
     return None, ""
 
 
+def candidate_models_html():
+    cm = load("content/candidate_models.json", {"models": []}).get("models", [])
+    if not cm:
+        return ""
+    rows = []
+    for m in sorted(cm, key=lambda m: m["name"]):
+        dl = ('<span class="muted">Download on the published site</span>' if ARTIFACT
+              else f'<a href="{m["file"]}" download>{E(os.path.basename(m["file"]))}</a>')
+        rows.append(f'<tr><td><b>{E(m["name"])}</b><span class="sub">{E(m["ticker"])}</span></td><td>{E(m["method"])}</td><td>{short_date(m["built"])}</td><td>{dl}</td></tr>')
+    return ('<section class="sect"><h2>Watchlist models</h2><p class="muted" style="font-family:var(--f-ui)">Names I am watching but do not own. '
+            'These are working models, not published calls, so they are not on the scorecard.</p>'
+            '<div class="table-box"><table class="calls"><thead><tr><th>Company</th><th>Method</th><th>Built</th><th>Workbook</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div></section>")
+
+
 def holdings_models_html():
     rows = []
     for p in sorted(BOOK.get("positions", []), key=lambda p: p.get("name") or p["ticker"]):
@@ -598,7 +612,7 @@ def build():
     mp = ('<section class="page"><div class="sect-head"><h1>Models</h1></div>'
           '<p class="lede">The Excel workbooks behind the valuations, with live formulas. Blue cells are inputs. Each workbook has a WACC tab with a switch between a CAPM-calculated discount rate and my assumed rate.</p></section>'
           f'<div class="cards">{"".join(cards)}</div>'
-          + holdings_models_html() +
+          + holdings_models_html() + candidate_models_html() +
           '<div class="notes"><p>These are free cash flow models, not full three-statement builds. Free cash flow is operating income after tax, less net reinvestment and the working capital that growth absorbs. '
           'Every scenario path, margin and discount rate is my own assumption, set out where you can change it.</p></div>')
     page("models.html", "Models", mp, "Models", description="The valuation workbooks behind each journal entry.")
