@@ -2,7 +2,7 @@
   "note": "Percentages and per-share prices only. Never store dollar amounts or share counts in this file: the repository is public.",
   "account": "Personal brokerage account",
   "snapshot": "2026-10-26",
-  "cash": 17.22,
+  "cash": 12.74,
   "positions": [
     {
       "ticker": "MO",
@@ -725,6 +725,78 @@
       "trimAbove": 4.0,
       "exitBelow": 1.5,
       "model": "models/holdings/TMC_Valuation.xlsx"
+    },
+    {
+      "ticker": "NBIS",
+      "weight": 2.71,
+      "snapPrice": 182.12,
+      "avgCost": 182.12,
+      "name": "Nebius Group",
+      "type": "Equity",
+      "opened": "2026-10-28",
+      "trade": true,
+      "sellAbove": 210,
+      "exitBelow": 165,
+      "exitPlan": "Short-term trade on an AI bounce, not a long-term holding. Sell the whole position at about $210, or get out if it breaks below $165."
+    },
+    {
+      "ticker": "MDT",
+      "weight": 1.77,
+      "snapPrice": 95.01,
+      "avgCost": 95.01,
+      "name": "Medtronic",
+      "type": "Equity",
+      "opened": "2026-10-28",
+      "target": 120,
+      "trimAbove": 155,
+      "exitBelow": 87,
+      "exitPlan": "Sell if organic revenue growth falls below 3% for two quarters in a row, the pace of the bear case, or on a dividend cut.",
+      "entry": "healthcare-in-a-late-cycle",
+      "valueCurve": [
+        [
+          0.05,
+          317.72
+        ],
+        [
+          0.06,
+          206.97
+        ],
+        [
+          0.07,
+          151.61
+        ],
+        [
+          0.08,
+          118.4
+        ],
+        [
+          0.09,
+          96.27
+        ],
+        [
+          0.1,
+          80.47
+        ],
+        [
+          0.11,
+          68.63
+        ],
+        [
+          0.12,
+          59.42
+        ],
+        [
+          0.13,
+          52.06
+        ],
+        [
+          0.14,
+          46.04
+        ]
+      ],
+      "requiredReturn": 0.08,
+      "model": "models/holdings/MDT_Valuation.xlsx",
+      "exitRule": "bear"
     }
   ],
   "closed": [],
@@ -737,6 +809,24 @@
       "to": 3.25,
       "note": "Sold about a third (35%) after the price passed the $150 trim level, the bull-case value in the holdings workbook. The rest stays under the same exit plan.",
       "price": 157.145
+    },
+    {
+      "date": "2026-10-28",
+      "action": "Buy",
+      "ticker": "NBIS",
+      "from": 0,
+      "to": 2.71,
+      "price": 182.12,
+      "note": "Opened a short-term trade on a bounce in AI stocks. Target about $210, where I sell the whole position; out below $165. Not a long-term call, so it has no model or scorecard row."
+    },
+    {
+      "date": "2026-10-28",
+      "action": "Buy",
+      "ticker": "MDT",
+      "from": 0,
+      "to": 1.77,
+      "price": 95.01,
+      "note": "Opened below the $120 buy level from the healthcare entry, at about the 1.7% size it proposed. Exit below is the bear value, $87, because the price was already under the usual halfway level."
     }
   ],
   "targetsAsOf": "2026-10-23",

@@ -9,7 +9,8 @@ What it does, for each workbook in models/holdings/ that has a WACC tab:
      row 38) by the same amount, so each stock keeps its premium over Treasuries.
   3. Recalculates the workbook with LibreOffice (the xlsx skill's recalc.py).
 Then it rereads the recalculated values and updates content/positions.json:
-  target (base value), trimAbove (bull value), exitBelow (halfway, bear to base), requiredReturn,
+  target (base value), trimAbove (bull value), exitBelow (halfway, bear to base; the bear value when the
+  position has "exitRule": "bear"), requiredReturn,
   using the same rounding as the published levels. TMC uses its own risk rate and is skipped.
 
 Changes smaller than 0.10 percentage points are ignored unless --force is given, to avoid
@@ -91,7 +92,8 @@ def main():
         s = wb["Summary"]
         bear, base, bull = (s.cell(5, c).value for c in (5, 6, 7))
         rate = wb[t]["B8" if t in ("JPM", "BAC") else "B10"].value
-        new = dict(target=rnd(base), trimAbove=rnd(bull), exitBelow=rnd((bear + base) / 2), requiredReturn=round(rate, 4))
+        exit_v = bear if p.get("exitRule") == "bear" else (bear + base) / 2
+        new = dict(target=rnd(base), trimAbove=rnd(bull), exitBelow=rnd(exit_v), requiredReturn=round(rate, 4))
         print(f"{t:6s} {p.get('requiredReturn', 0):.2%}->{rate:.2%} {p.get('target')}->{new['target']:<8} "
               f"{p.get('trimAbove')}->{new['trimAbove']:<6} {p.get('exitBelow')}->{new['exitBelow']}")
         p.update(new)

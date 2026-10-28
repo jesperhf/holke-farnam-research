@@ -326,12 +326,16 @@ def positions_page():
     for p in rows:
         lp, ld = pos_price(p["ticker"])
         if lp is None and p.get("snapPrice"):
-            lp, ld = p["snapPrice"], snap  # until the daily job prices it
+            lp, ld = p["snapPrice"], (p.get("opened") or snap)  # until the price job prices it
         ccy = p.get("currency", "USD")
         wt = w.get(p["ticker"], p["weight"])
         ret = f'<span class="{"pos" if lp >= p["avgCost"] else "neg"}">{pct((lp / p["avgCost"] - 1) * 100) if abs(lp / p["avgCost"] - 1) >= 0.005 else "0%"}</span>' if (lp and p.get("avgCost")) else '<span class="muted">n/a</span>'
         plan = []
         flags = []
+        if p.get("sellAbove"):
+            plan.append("Sell all above " + money(p["sellAbove"], ccy))
+            if lp and lp >= p["sellAbove"]:
+                flags.append('<span class="chip L">At sell level</span>')
         if p.get("trimAbove"):
             plan.append("Trim above " + money(p["trimAbove"], ccy))
             if lp and lp >= p["trimAbove"]:
@@ -347,7 +351,7 @@ def positions_page():
             links.append(f'<a class="nowrap" href="{p["model"]}" download>Model</a>')
         if p.get("entry"):
             links.append(f'<a href="journal/{p["entry"]}.html">Research</a>')
-        link = "<br>".join(links) if links else '<span class="muted nowrap">No model (fund)</span>'
+        link = "<br>".join(links) if links else ('<span class="muted nowrap">Trade, no model</span>' if p.get("trade") else '<span class="muted nowrap">No model (fund)</span>')
         is_fund = p.get("type") == "Fund" or p["ticker"] in ("JCPI", "HYBL", "VGK", "XBI")
         if p.get("target"):
             tgt = money(p["target"], ccy)
@@ -355,7 +359,7 @@ def positions_page():
                 gap = (p["target"] / lp - 1) * 100
                 tgt += f'<span class="sub">{pct(gap)} vs price</span>'
         else:
-            tgt = '<span class="muted">' + ("Fund" if is_fund else "None") + "</span>"
+            tgt = '<span class="muted">' + ("Fund" if is_fund else "Trade" if p.get("trade") else "None") + "</span>"
         irr, irr_txt = implied_return(p.get("valueCurve"), lp)
         req = p.get("requiredReturn")
         if irr is not None or irr_txt:
@@ -365,7 +369,7 @@ def positions_page():
         elif p.get("target"):
             impl = '<span class="muted">Weighted value</span>'
         else:
-            impl = '<span class="muted">' + ("Fund" if is_fund else "None") + "</span>"
+            impl = '<span class="muted">' + ("Fund" if is_fund else "Trade" if p.get("trade") else "None") + "</span>"
         opened = fmt_open(p.get("opened"), snap)
         nm = f'<b>{E(p.get("name") or p["ticker"])}</b>'
         if p.get("model"):
@@ -407,7 +411,7 @@ def positions_page():
             + strip + open_tbl + "</section>" + closed_html + log +
             '<div class="notes"><p><b>How to read this.</b> Gain vs cost is the latest price against my average cost per share, before dividends. Exit levels are set in advance: '
             '"trim above" is the bull-case value, where I would sell about a third; "exit below" sits halfway between the bear and base values, where I reread the thesis and sell unless it still holds. A chip appears when the price reaches either level.</p>'
-            '<p><b>Base value</b> is the base-case value from that holding\'s own workbook (click the name, or see the <a href="models.html">models page</a>): what each business is worth if my base case plays out and I want to earn my full required return (the 10-year Treasury yield, ' + f'{BOOK.get("riskFree", {}).get("rate", 0.0531) * 100:.2f}% as of {short_date(BOOK.get("riskFree", {}).get("date", "2026-10-06"))}' + ', plus a premium for each stock\'s risk that stays fixed as the yield moves). It is not a forecast of where the stock will trade. <b>Return at today\'s price</b> runs the same model the other way: the annual return the base case earns if I buy at the latest price, recomputed whenever prices refresh. It shows in green when it clears the required return listed under it. A price above the base value still earns a positive return, just less than I require, so it is a reason not to add, not by itself a reason to sell. Funds have weight ranges instead, and TMC has a probability-weighted value. Purchase dates are not shown.</p>'
+            '<p><b>Base value</b> is the base-case value from that holding\'s own workbook (click the name, or see the <a href="models.html">models page</a>): what each business is worth if my base case plays out and I want to earn my full required return (the 10-year Treasury yield, ' + f'{BOOK.get("riskFree", {}).get("rate", 0.0531) * 100:.2f}% as of {short_date(BOOK.get("riskFree", {}).get("date", "2026-10-06"))}' + ', plus a premium for each stock\'s risk that stays fixed as the yield moves). It is not a forecast of where the stock will trade. <b>Return at today\'s price</b> runs the same model the other way: the annual return the base case earns if I buy at the latest price, recomputed whenever prices refresh. It shows in green when it clears the required return listed under it. A price above the base value still earns a positive return, just less than I require, so it is a reason not to add, not by itself a reason to sell. Funds have weight ranges instead, TMC has a probability-weighted value, and short-term trades have a sell level and a stop instead of a model. Purchase dates are not shown.</p>'
             "<p>Trades are posted after they are filled, not before.</p></div>")
 
 
