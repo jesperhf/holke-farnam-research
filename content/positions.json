@@ -11,50 +11,50 @@
       "avgCost": 61.3705,
       "name": "Altria",
       "type": "Equity",
-      "target": 65,
+      "target": 66,
       "exitPlan": "Sell on a dividend cut, or if cigarette volumes fall more than about 8% a year without price increases to offset them.",
-      "trimAbove": 86,
+      "trimAbove": 87,
       "exitBelow": 54,
       "valueCurve": [
         [
           0.05,
-          99.53
+          99.88
         ],
         [
           0.06,
-          83.66
+          83.96
         ],
         [
           0.07,
-          72.02
+          72.28
         ],
         [
           0.08,
-          63.12
+          63.34
         ],
         [
           0.09,
-          56.08
+          56.28
         ],
         [
           0.1,
-          50.38
+          50.56
         ],
         [
           0.11,
-          45.67
+          45.83
         ],
         [
           0.12,
-          41.71
+          41.86
         ],
         [
           0.13,
-          38.33
+          38.47
         ],
         [
           0.14,
-          35.42
+          35.54
         ]
       ],
       "requiredReturn": 0.0772,
@@ -123,50 +123,50 @@
       "avgCost": 171.8387,
       "name": "Alphabet (Class C)",
       "type": "Equity",
-      "target": 265,
+      "target": 250,
       "exitPlan": "Sell if search revenue growth turns negative, or if Cloud operating margin falls while capex keeps rising.",
-      "trimAbove": 345,
-      "exitBelow": 210,
+      "trimAbove": 335,
+      "exitBelow": 195,
       "valueCurve": [
         [
           0.05,
-          1441.25
+          1421.1
         ],
         [
           0.06,
-          714.45
+          697.05
         ],
         [
           0.07,
-          472.5
+          456.25
         ],
         [
           0.08,
-          351.75
+          336.24
         ],
         [
           0.09,
-          279.47
+          264.52
         ],
         [
           0.1,
-          231.42
+          216.94
         ],
         [
           0.11,
-          197.2
+          183.14
         ],
         [
           0.12,
-          171.63
+          157.94
         ],
         [
           0.13,
-          151.81
+          138.46
         ],
         [
           0.14,
-          136.02
+          122.99
         ]
       ],
       "requiredReturn": 0.0922,
@@ -244,50 +244,50 @@
       "avgCost": 192.6894,
       "name": "Cheniere Energy",
       "type": "Equity",
-      "target": 330,
+      "target": 380,
       "exitPlan": "Sell on a cut to cash flow guidance, or if new long-term contracting stalls as the 2027 to 2028 LNG supply wave arrives.",
-      "trimAbove": 475,
-      "exitBelow": 240,
+      "trimAbove": 530,
+      "exitBelow": 280,
       "valueCurve": [
         [
           0.05,
-          678.56
+          745.66
         ],
         [
           0.06,
-          479.26
+          536.13
         ],
         [
           0.07,
-          352.54
+          402.91
         ],
         [
           0.08,
-          264.91
+          310.77
         ],
         [
           0.09,
-          200.72
+          243.28
         ],
         [
           0.1,
-          151.7
+          191.73
         ],
         [
           0.11,
-          113.06
+          151.09
         ],
         [
           0.12,
-          81.83
+          118.25
         ],
         [
           0.13,
-          56.08
+          91.15
         ],
         [
           0.14,
-          34.48
+          68.43
         ]
       ],
       "requiredReturn": 0.0722,
@@ -303,47 +303,47 @@
       "target": 110,
       "exitPlan": "Sell if subscription revenue or current remaining performance obligations grow less than 15%.",
       "trimAbove": 160,
-      "exitBelow": 86,
+      "exitBelow": 84,
       "valueCurve": [
         [
           0.05,
-          618.31
+          612.41
         ],
         [
           0.06,
-          303.33
+          299.86
         ],
         [
           0.07,
-          198.53
+          195.87
         ],
         [
           0.08,
-          146.26
+          144.0
         ],
         [
           0.09,
-          115.0
+          112.98
         ],
         [
           0.1,
-          94.23
+          92.37
         ],
         [
           0.11,
-          79.46
+          77.72
         ],
         [
           0.12,
-          68.44
+          66.78
         ],
         [
           0.13,
-          59.9
+          58.31
         ],
         [
           0.14,
-          53.11
+          51.57
         ]
       ],
       "requiredReturn": 0.0922,
