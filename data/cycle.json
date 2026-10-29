@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-28T20:31+00:00",
+ "generated": "2026-10-29T13:16+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
-  "position": 50.0,
-  "phase": "L",
+  "position": 47.5,
+  "phase": "M",
   "counts": {
-   "E": 0,
-   "M": 6,
+   "E": 1,
+   "M": 5,
    "L": 5,
    "C": 0
   },
@@ -43,10 +43,10 @@
     "series": "ICSA",
     "rule": "30% or more above its 52-week low: Contraction. 15% above: Late. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/ICSA",
-    "period": "week of Oct 17, 2026",
-    "value": 197750.0,
-    "display": "198k",
-    "context": "0% above 52-week low of 198k",
+    "period": "week of Oct 24, 2026",
+    "value": 196750.0,
+    "display": "197k",
+    "context": "0% above 52-week low of 197k",
     "vote": "M"
    },
    {
@@ -92,7 +92,7 @@
     "rule": "Inverted: Late. Positive but inverted at some point in the past 6 months: Contraction. Above +150 bp: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/T10Y3M",
     "period": "October 2026 average",
-    "value": 0.9194444444444445,
+    "value": 0.916842105263158,
     "display": "+92 bp",
     "context": "prior month +90 bp",
     "vote": "M"
@@ -103,11 +103,11 @@
     "series": "A191RL1Q225SBEA",
     "rule": "Below 0: Contraction. Below 1%: Late. Below 3%: Mid. Otherwise Early.",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA",
-    "period": "Q2 2026",
-    "value": 2.2,
-    "display": "2.2%",
+    "period": "Q3 2026",
+    "value": 3.4,
+    "display": "3.4%",
     "context": "latest quarter",
-    "vote": "M"
+    "vote": "E"
    },
    {
     "id": "realyield",
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-10-28"
+  "asOf": "2026-10-29"
  },
  "history": [
   {
@@ -2356,7 +2356,7 @@
   },
   {
    "m": "2026-10",
-   "pos": 49.4,
+   "pos": 45.6,
    "n": 7
   }
  ],
