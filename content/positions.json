@@ -291,7 +291,8 @@
         ]
       ],
       "requiredReturn": 0.0722,
-      "model": "models/holdings/LNG_Valuation.xlsx"
+      "model": "models/holdings/LNG_Valuation.xlsx",
+      "entry": "cheniere-q3-2026"
     },
     {
       "ticker": "NOW",

@@ -342,6 +342,24 @@
       "sector": "Streaming",
       "published": "2026-10-28",
       "yahoo": "NFLX"
+    },
+    {
+      "id": "lng-2026-10",
+      "name": "Cheniere Energy",
+      "ticker": "LNG",
+      "currency": "USD",
+      "price": 297.77,
+      "priceDate": "2026-10-28",
+      "bear": 181.63,
+      "base": 379.87,
+      "bull": 532.48,
+      "buyBelow": 380,
+      "stance": "Hold",
+      "entry": "cheniere-q3-2026",
+      "stooq": "lng.us",
+      "sector": "LNG export",
+      "published": "2026-10-29",
+      "yahoo": "LNG"
     }
   ]
 }
