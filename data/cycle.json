@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T13:07+00:00",
+ "generated": "2026-11-02T13:27+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -79,7 +79,7 @@
     "series": "DFEDTARU",
     "rule": "Higher than 3 months earlier: Late. Lower: Early. Unchanged: Mid.",
     "url": "https://fred.stlouisfed.org/series/DFEDTARU",
-    "period": "October 2026",
+    "period": "November 2026",
     "value": 4.0,
     "display": "4.00%",
     "context": "3 months earlier 3.75%",
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-11-01"
+  "asOf": "2026-11-02"
  },
  "history": [
   {

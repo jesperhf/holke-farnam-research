@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T13:07+00:00",
+ "generated": "2026-11-02T13:27+00:00",
  "prices": {
   "tsm": {
    "price": 406.13,
@@ -32,9 +32,9 @@
    "source": "Yahoo Finance"
   },
   "skh": {
-   "price": 1418000.0,
-   "date": "2026-10-30",
-   "time": "2026-10-30T06:30+00:00",
+   "price": 1472000.0,
+   "date": "2026-11-02",
+   "time": "2026-11-02T06:30+00:00",
    "source": "Yahoo Finance"
   },
   "mu": {
@@ -62,9 +62,9 @@
    "source": "Yahoo Finance"
   },
   "enr": {
-   "price": 126.92,
-   "date": "2026-10-30",
-   "time": "2026-10-30T16:37+00:00",
+   "price": 128.1,
+   "date": "2026-11-02",
+   "time": "2026-11-02T13:12+00:00",
    "source": "Yahoo Finance"
   },
   "cohr": {
