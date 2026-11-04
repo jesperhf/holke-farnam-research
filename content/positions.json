@@ -2,7 +2,7 @@
   "note": "Percentages and per-share prices only. Never store dollar amounts or share counts in this file: the repository is public.",
   "account": "Personal brokerage account",
   "snapshot": "2026-10-26",
-  "cash": 12.74,
+  "cash": 5.05,
   "positions": [
     {
       "ticker": "MO",
@@ -118,9 +118,9 @@
     },
     {
       "ticker": "GOOG",
-      "weight": 7.36,
+      "weight": 9.72,
       "snapPrice": 317.28,
-      "avgCost": 171.8387,
+      "avgCost": 201.4288,
       "name": "Alphabet (Class C)",
       "type": "Equity",
       "target": 250,
@@ -349,63 +349,6 @@
       ],
       "requiredReturn": 0.0922,
       "model": "models/holdings/NOW_Valuation.xlsx"
-    },
-    {
-      "ticker": "CLS",
-      "weight": 4.45,
-      "snapPrice": 260.01,
-      "avgCost": 344.725,
-      "name": "Celestica",
-      "type": "Equity",
-      "target": 205,
-      "exitPlan": "Sell if a major hyperscaler cuts capex, or if 2027 revenue guidance comes in below 2026. The first position to cut if a contraction starts.",
-      "trimAbove": 330,
-      "exitBelow": 170,
-      "entry": "celestica-q3-2026",
-      "valueCurve": [
-        [
-          0.05,
-          704.39
-        ],
-        [
-          0.06,
-          474.46
-        ],
-        [
-          0.07,
-          359.52
-        ],
-        [
-          0.08,
-          290.57
-        ],
-        [
-          0.09,
-          244.62
-        ],
-        [
-          0.1,
-          211.81
-        ],
-        [
-          0.11,
-          187.22
-        ],
-        [
-          0.12,
-          168.1
-        ],
-        [
-          0.13,
-          152.81
-        ],
-        [
-          0.14,
-          140.31
-        ]
-      ],
-      "requiredReturn": 0.1022,
-      "model": "models/holdings/CLS_Valuation.xlsx"
     },
     {
       "ticker": "EPD",
@@ -798,9 +741,147 @@
       "requiredReturn": 0.0772,
       "model": "models/holdings/MDT_Valuation.xlsx",
       "exitRule": "bear"
+    },
+    {
+      "ticker": "UBER",
+      "weight": 3.16,
+      "snapPrice": 70.92,
+      "avgCost": 70.92,
+      "name": "Uber Technologies",
+      "type": "Equity",
+      "opened": "2026-11-04",
+      "target": 90,
+      "trimAbove": 145,
+      "exitBelow": 62,
+      "exitPlan": "Sell if another major autonomous fleet leaves the app, or if operating margins stall below 15%.",
+      "entry": "uber-after-the-selloff",
+      "valueCurve": [
+        [
+          0.05,
+          396.27
+        ],
+        [
+          0.06,
+          234.99
+        ],
+        [
+          0.07,
+          165.9
+        ],
+        [
+          0.08,
+          127.55
+        ],
+        [
+          0.09,
+          103.17
+        ],
+        [
+          0.1,
+          86.31
+        ],
+        [
+          0.11,
+          73.96
+        ],
+        [
+          0.12,
+          64.53
+        ],
+        [
+          0.13,
+          57.09
+        ],
+        [
+          0.14,
+          51.08
+        ]
+      ],
+      "requiredReturn": 0.0972,
+      "model": "models/holdings/UBER_Valuation.xlsx"
+    },
+    {
+      "ticker": "ABT",
+      "weight": 4.17,
+      "snapPrice": 112.33,
+      "avgCost": 112.33,
+      "name": "Abbott Laboratories",
+      "type": "Equity",
+      "opened": "2026-11-04",
+      "target": 140,
+      "trimAbove": 200,
+      "exitBelow": 98,
+      "exitRule": "bear",
+      "exitPlan": "Sell if organic sales growth falls below 4% for two quarters in a row, below the bear case, or if the Libre recall widens.",
+      "entry": "healthcare-in-a-late-cycle",
+      "valueCurve": [
+        [
+          0.05,
+          427.12
+        ],
+        [
+          0.06,
+          249.79
+        ],
+        [
+          0.07,
+          173.82
+        ],
+        [
+          0.08,
+          131.64
+        ],
+        [
+          0.09,
+          104.81
+        ],
+        [
+          0.1,
+          86.26
+        ],
+        [
+          0.11,
+          72.66
+        ],
+        [
+          0.12,
+          62.28
+        ],
+        [
+          0.13,
+          54.08
+        ],
+        [
+          0.14,
+          47.46
+        ]
+      ],
+      "requiredReturn": 0.0772,
+      "model": "models/holdings/ABT_Valuation.xlsx"
+    },
+    {
+      "ticker": "SPCX",
+      "weight": 2.44,
+      "snapPrice": 139.88,
+      "avgCost": 139.88,
+      "name": "SpaceX",
+      "type": "Equity",
+      "opened": "2026-11-04",
+      "noModel": "Long-term bet, no model",
+      "exitPlan": "A long-term bet on SpaceX building out data centers in space and becoming a major internet provider worldwide. Kept small, partly as a hedge against my other holdings. No price target or exit level."
     }
   ],
-  "closed": [],
+  "closed": [
+    {
+      "ticker": "CLS",
+      "name": "Celestica",
+      "closed": "2026-11-04",
+      "avgCost": 344.725,
+      "exitPrice": 249.63,
+      "entry": "celestica-q3-2026",
+      "note": "Sold the whole position at a loss. My view is that AI capex and the multiples on AI stocks will contract, from 30 to 40 times earnings toward 15 to 20."
+    }
+  ],
   "trades": [
     {
       "date": "2026-10-26",
@@ -828,6 +909,51 @@
       "to": 1.77,
       "price": 95.01,
       "note": "Opened below the $120 buy level from the healthcare entry, at about the 1.7% size it proposed. Exit below is the bear value, $87, because the price was already under the usual halfway level."
+    },
+    {
+      "date": "2026-11-04",
+      "action": "Sell all",
+      "ticker": "CLS",
+      "from": 4.27,
+      "to": 0,
+      "price": 249.63,
+      "note": "Closed at a loss on my view that AI capex and AI stock multiples will contract. The position moves to closed positions."
+    },
+    {
+      "date": "2026-11-04",
+      "action": "Buy",
+      "ticker": "UBER",
+      "from": 0,
+      "to": 3.16,
+      "price": 70.92,
+      "note": "Opened after Q3 results, below the base value in the Uber entry."
+    },
+    {
+      "date": "2026-11-04",
+      "action": "Buy",
+      "ticker": "ABT",
+      "from": 0,
+      "to": 4.17,
+      "price": 112.33,
+      "note": "Opened below the buy level from the healthcare entry. Exit below is the bear value, $98, because the price was already under the halfway level."
+    },
+    {
+      "date": "2026-11-04",
+      "action": "Add",
+      "ticker": "GOOG",
+      "from": 6.81,
+      "to": 9.0,
+      "price": 293.75,
+      "note": "Added after the post-earnings drop. Alphabet stays a larger position than SpaceX on purpose."
+    },
+    {
+      "date": "2026-11-04",
+      "action": "Buy",
+      "ticker": "SPCX",
+      "from": 0,
+      "to": 2.44,
+      "price": 139.88,
+      "note": "A small long-term bet on SpaceX, partly a hedge against other holdings. No model or exit levels."
     }
   ],
   "targetsAsOf": "2026-10-23",

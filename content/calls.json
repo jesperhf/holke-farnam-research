@@ -360,6 +360,24 @@
       "sector": "LNG export",
       "published": "2026-10-29",
       "yahoo": "LNG"
+    },
+    {
+      "id": "cls-2026-11",
+      "name": "Celestica",
+      "ticker": "CLS",
+      "currency": "USD",
+      "price": 249.63,
+      "priceDate": "2026-11-04",
+      "bear": 129.93,
+      "base": 205.82,
+      "bull": 330.54,
+      "buyBelow": 205,
+      "stance": "Pass: sold",
+      "entry": "celestica-q3-2026",
+      "stooq": "cls.us",
+      "sector": "AI hardware",
+      "published": "2026-11-04",
+      "yahoo": "CLS"
     }
   ]
 }

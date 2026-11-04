@@ -1,0 +1,3 @@
+### November 4, 2026
+
+**Bought a position at $70.92**, about 3.2% of the portfolio, after Q3 results. Gross bookings grew 20% to $59.8 billion and Q4 guidance calls for 18% to 22% bookings growth ([Q3 release](https://finance.yahoo.com/markets/stocks/articles/uber-announces-results-third-quarter-115500361.html)). Two things in the quarter run against this entry's test: Mobility bookings grew 18%, below the 20% I wanted to see, and GAAP operating income fell to about 9.5% of revenue. Neither changes the model yet. The levels on the positions page use the October 28 Treasury rate: base value $90, trim above $145, exit below $62.

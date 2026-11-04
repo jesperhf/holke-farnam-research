@@ -351,7 +351,7 @@ def positions_page():
             links.append(f'<a class="nowrap" href="{p["model"]}" download>Model</a>')
         if p.get("entry"):
             links.append(f'<a href="journal/{p["entry"]}.html">Research</a>')
-        link = "<br>".join(links) if links else ('<span class="muted nowrap">Trade, no model</span>' if p.get("trade") else '<span class="muted nowrap">No model (fund)</span>')
+        link = "<br>".join(links) if links else ('<span class="muted nowrap">Trade, no model</span>' if p.get("trade") else f'<span class="muted nowrap">{E(p["noModel"])}</span>' if p.get("noModel") else '<span class="muted nowrap">No model (fund)</span>')
         is_fund = p.get("type") == "Fund" or p["ticker"] in ("JCPI", "HYBL", "VGK", "XBI")
         if p.get("target"):
             tgt = money(p["target"], ccy)
@@ -387,7 +387,7 @@ def positions_page():
     if closed:
         crs = "".join(
             f'<tr><td><b>{E(c.get("name") or c["ticker"])}</b><span class="sub">{E(c["ticker"])}</span></td>'
-            f'<td>{fmt_open(c.get("opened"))}</td><td>{short_date(c["closed"])}</td>'
+            f'<td>{fmt_open(c.get("opened"), BOOK.get("snapshot"))}</td><td>{short_date(c["closed"])}</td>'
             f'<td class="num">{money(c["avgCost"], c.get("currency", "USD"))}</td><td class="num">{money(c["exitPrice"], c.get("currency", "USD"))}</td>'
             f'<td class="num"><span class="{"pos" if c["exitPrice"] >= c["avgCost"] else "neg"}">{pct((c["exitPrice"] / c["avgCost"] - 1) * 100)}</span></td>'
             f'<td>{E(c.get("note", ""))}</td></tr>' for c in sorted(closed, key=lambda c: c["closed"], reverse=True))
