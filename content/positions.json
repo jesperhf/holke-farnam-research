@@ -11,10 +11,10 @@
       "avgCost": 61.3705,
       "name": "Altria",
       "type": "Equity",
-      "target": 66,
+      "target": 67,
       "exitPlan": "Sell on a dividend cut, or if cigarette volumes fall more than about 8% a year without price increases to offset them.",
-      "trimAbove": 87,
-      "exitBelow": 54,
+      "trimAbove": 89,
+      "exitBelow": 55,
       "valueCurve": [
         [
           0.05,
@@ -57,7 +57,7 @@
           35.54
         ]
       ],
-      "requiredReturn": 0.0772,
+      "requiredReturn": 0.0758,
       "model": "models/holdings/MO_Valuation.xlsx"
     },
     {
@@ -67,10 +67,10 @@
       "avgCost": 63.637,
       "name": "Coca-Cola",
       "type": "Equity",
-      "target": 77,
+      "target": 79,
       "exitPlan": "Sell if organic growth is below 3% for two quarters in a row, or if North American volumes decline.",
-      "trimAbove": 99,
-      "exitBelow": 67,
+      "trimAbove": 105,
+      "exitBelow": 69,
       "valueCurve": [
         [
           0.05,
@@ -113,7 +113,7 @@
           29.08
         ]
       ],
-      "requiredReturn": 0.0722,
+      "requiredReturn": 0.0708,
       "model": "models/holdings/KO_Valuation.xlsx"
     },
     {
@@ -123,10 +123,10 @@
       "avgCost": 201.4288,
       "name": "Alphabet (Class C)",
       "type": "Equity",
-      "target": 250,
+      "target": 260,
       "exitPlan": "Sell if search revenue growth turns negative, or if Cloud operating margin falls while capex keeps rising.",
-      "trimAbove": 335,
-      "exitBelow": 195,
+      "trimAbove": 345,
+      "exitBelow": 200,
       "valueCurve": [
         [
           0.05,
@@ -169,7 +169,7 @@
           122.99
         ]
       ],
-      "requiredReturn": 0.0922,
+      "requiredReturn": 0.0908,
       "model": "models/holdings/GOOG_Valuation.xlsx"
     },
     {
@@ -188,10 +188,10 @@
       "avgCost": 245.9776,
       "name": "UnitedHealth Group",
       "type": "Equity",
-      "target": 505,
+      "target": 520,
       "exitPlan": "Sell if the medical care ratio goes back above 90% excluding reserve releases, or if 2027 EPS guidance comes in below $22.",
-      "trimAbove": 745,
-      "exitBelow": 415,
+      "trimAbove": 770,
+      "exitBelow": 425,
       "valueCurve": [
         [
           0.05,
@@ -234,7 +234,7 @@
           213.48
         ]
       ],
-      "requiredReturn": 0.0872,
+      "requiredReturn": 0.0858,
       "model": "models/holdings/UNH_Valuation.xlsx"
     },
     {
@@ -244,10 +244,10 @@
       "avgCost": 192.6894,
       "name": "Cheniere Energy",
       "type": "Equity",
-      "target": 380,
+      "target": 395,
       "exitPlan": "Sell on a cut to cash flow guidance, or if new long-term contracting stalls as the 2027 to 2028 LNG supply wave arrives.",
-      "trimAbove": 530,
-      "exitBelow": 280,
+      "trimAbove": 555,
+      "exitBelow": 290,
       "valueCurve": [
         [
           0.05,
@@ -290,7 +290,7 @@
           68.43
         ]
       ],
-      "requiredReturn": 0.0722,
+      "requiredReturn": 0.0708,
       "model": "models/holdings/LNG_Valuation.xlsx",
       "entry": "cheniere-q3-2026"
     },
@@ -303,8 +303,8 @@
       "type": "Equity",
       "target": 110,
       "exitPlan": "Sell if subscription revenue or current remaining performance obligations grow less than 15%.",
-      "trimAbove": 160,
-      "exitBelow": 84,
+      "trimAbove": 165,
+      "exitBelow": 87,
       "valueCurve": [
         [
           0.05,
@@ -347,7 +347,7 @@
           51.57
         ]
       ],
-      "requiredReturn": 0.0922,
+      "requiredReturn": 0.0908,
       "model": "models/holdings/NOW_Valuation.xlsx"
     },
     {
@@ -357,10 +357,10 @@
       "avgCost": 32.067,
       "name": "Enterprise Products Partners",
       "type": "Equity",
-      "target": 37,
+      "target": 39,
       "exitPlan": "Sell on a distribution cut, or if distribution coverage falls below 1.3 times.",
-      "trimAbove": 51,
-      "exitBelow": 29,
+      "trimAbove": 53,
+      "exitBelow": 31,
       "valueCurve": [
         [
           0.05,
@@ -403,7 +403,7 @@
           9.76
         ]
       ],
-      "requiredReturn": 0.0772,
+      "requiredReturn": 0.0758,
       "model": "models/holdings/EPD_Valuation.xlsx"
     },
     {
@@ -422,9 +422,9 @@
       "avgCost": 126.944,
       "name": "Nvidia",
       "type": "Equity",
-      "target": 170,
+      "target": 175,
       "exitPlan": "Sell if any hyperscaler guides 2027 capex flat or down, or if gross margin falls below 70%.",
-      "trimAbove": 245,
+      "trimAbove": 250,
       "exitBelow": 135,
       "valueCurve": [
         [
@@ -468,7 +468,7 @@
           120.92
         ]
       ],
-      "requiredReturn": 0.1072,
+      "requiredReturn": 0.1058,
       "model": "models/holdings/NVDA_Valuation.xlsx"
     },
     {
@@ -487,10 +487,10 @@
       "avgCost": 38.2819,
       "name": "Bank of America",
       "type": "Equity",
-      "target": 57,
+      "target": 58,
       "exitPlan": "Sell if return on tangible equity is below 12% excluding one-offs, or if expenses outgrow revenue for two more quarters.",
-      "trimAbove": 66,
-      "exitBelow": 47,
+      "trimAbove": 68,
+      "exitBelow": 48,
       "valueCurve": [
         [
           0.05,
@@ -533,7 +533,7 @@
           34.26
         ]
       ],
-      "requiredReturn": 0.1022,
+      "requiredReturn": 0.1008,
       "model": "models/holdings/BAC_Valuation.xlsx"
     },
     {
@@ -543,10 +543,10 @@
       "avgCost": 241.4877,
       "name": "JPMorgan Chase",
       "type": "Equity",
-      "target": 275,
+      "target": 280,
       "exitPlan": "Sell if return on tangible equity falls below 15%, or if net charge-offs rise quickly.",
-      "trimAbove": 330,
-      "exitBelow": 235,
+      "trimAbove": 340,
+      "exitBelow": 245,
       "valueCurve": [
         [
           0.05,
@@ -589,7 +589,7 @@
           147.65
         ]
       ],
-      "requiredReturn": 0.0972,
+      "requiredReturn": 0.0958,
       "model": "models/holdings/JPM_Valuation.xlsx"
     },
     {
@@ -654,7 +654,7 @@
           100.19
         ]
       ],
-      "requiredReturn": 0.1022,
+      "requiredReturn": 0.1008,
       "model": "models/holdings/FSLR_Valuation.xlsx"
     },
     {
@@ -691,9 +691,9 @@
       "name": "Medtronic",
       "type": "Equity",
       "opened": "2026-10-28",
-      "target": 125,
-      "trimAbove": 165,
-      "exitBelow": 92,
+      "target": 130,
+      "trimAbove": 175,
+      "exitBelow": 95,
       "exitPlan": "Sell if organic revenue growth falls below 3% for two quarters in a row, the pace of the bear case, or on a dividend cut.",
       "entry": "healthcare-in-a-late-cycle",
       "valueCurve": [
@@ -738,7 +738,7 @@
           46.04
         ]
       ],
-      "requiredReturn": 0.0772,
+      "requiredReturn": 0.0758,
       "model": "models/holdings/MDT_Valuation.xlsx",
       "exitRule": "bear"
     },
@@ -750,9 +750,9 @@
       "name": "Uber Technologies",
       "type": "Equity",
       "opened": "2026-11-04",
-      "target": 90,
-      "trimAbove": 145,
-      "exitBelow": 62,
+      "target": 93,
+      "trimAbove": 150,
+      "exitBelow": 63,
       "exitPlan": "Sell if another major autonomous fleet leaves the app, or if operating margins stall below 15%.",
       "entry": "uber-after-the-selloff",
       "valueCurve": [
@@ -797,7 +797,7 @@
           51.08
         ]
       ],
-      "requiredReturn": 0.0972,
+      "requiredReturn": 0.0958,
       "model": "models/holdings/UBER_Valuation.xlsx"
     },
     {
@@ -808,9 +808,9 @@
       "name": "Abbott Laboratories",
       "type": "Equity",
       "opened": "2026-11-04",
-      "target": 140,
-      "trimAbove": 200,
-      "exitBelow": 98,
+      "target": 145,
+      "trimAbove": 205,
+      "exitBelow": 100,
       "exitRule": "bear",
       "exitPlan": "Sell if organic sales growth falls below 4% for two quarters in a row, below the bear case, or if the Libre recall widens.",
       "entry": "healthcare-in-a-late-cycle",
@@ -856,7 +856,7 @@
           47.46
         ]
       ],
-      "requiredReturn": 0.0772,
+      "requiredReturn": 0.0758,
       "model": "models/holdings/ABT_Valuation.xlsx"
     },
     {
@@ -959,7 +959,7 @@
   "targetsAsOf": "2026-10-23",
   "levelsAsOf": "2026-10-23",
   "riskFree": {
-    "rate": 0.0503,
-    "date": "2026-10-28"
+    "rate": 0.0489,
+    "date": "2026-11-04"
   }
 }
