@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T13:29+00:00",
+ "generated": "2026-11-06T13:24+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -43,10 +43,10 @@
     "series": "ICSA",
     "rule": "30% or more above its 52-week low: Contraction. 15% above: Late. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/ICSA",
-    "period": "week of Oct 24, 2026",
-    "value": 196750.0,
-    "display": "197k",
-    "context": "0% above 52-week low of 197k",
+    "period": "week of Oct 31, 2026",
+    "value": 194750.0,
+    "display": "195k",
+    "context": "0% above 52-week low of 195k",
     "vote": "M"
    },
    {
@@ -92,8 +92,8 @@
     "rule": "Inverted: Late. Positive but inverted at some point in the past 6 months: Contraction. Above +150 bp: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/T10Y3M",
     "period": "November 2026 average",
-    "value": 0.71,
-    "display": "+71 bp",
+    "value": 0.7,
+    "display": "+70 bp",
     "context": "prior month +90 bp",
     "vote": "M"
    },
@@ -116,9 +116,9 @@
     "rule": "2.5% or above: Late. 0.5% or below: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/DFII10",
     "period": "November 2026 average",
-    "value": 2.635,
-    "display": "2.63%",
-    "context": "nominal 10-year 4.93%",
+    "value": 2.6366666666666667,
+    "display": "2.64%",
+    "context": "nominal 10-year 4.92%",
     "vote": "L"
    },
    {
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-11-05"
+  "asOf": "2026-11-06"
  },
  "history": [
   {
