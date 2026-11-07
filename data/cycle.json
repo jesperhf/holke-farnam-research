@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-06T13:24+00:00",
+ "generated": "2026-11-07T13:09+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
-  "position": 47.5,
+  "position": 45.5,
   "phase": "M",
   "counts": {
    "E": 1,
-   "M": 5,
-   "L": 5,
+   "M": 6,
+   "L": 4,
    "C": 0
   },
   "reporting": 11,
@@ -19,9 +19,9 @@
     "series": "UNRATE",
     "rule": "Up 0.5 pt or more from its 12-month low: Contraction. Up 0.2 pt: Late. Falling from 5% or above: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/UNRATE",
-    "period": "September 2026",
-    "value": 4.2,
-    "display": "4.2%",
+    "period": "October 2026",
+    "value": 4.1,
+    "display": "4.1%",
     "context": "12-month low 4.1% \u00b7 Sahm rule 0.00",
     "vote": "M"
    },
@@ -31,11 +31,11 @@
     "series": "PAYEMS",
     "rule": "Below 0: Contraction. Below +75k a month: Late. Below +250k: Mid. Otherwise Early.",
     "url": "https://fred.stlouisfed.org/series/PAYEMS",
-    "period": "September 2026",
-    "value": 50.666666666666664,
-    "display": "+51k",
-    "context": "latest month +29k",
-    "vote": "L"
+    "period": "October 2026",
+    "value": 137.0,
+    "display": "+137k",
+    "context": "latest month +165k",
+    "vote": "M"
    },
    {
     "id": "claims",
@@ -92,8 +92,8 @@
     "rule": "Inverted: Late. Positive but inverted at some point in the past 6 months: Contraction. Above +150 bp: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/T10Y3M",
     "period": "November 2026 average",
-    "value": 0.7,
-    "display": "+70 bp",
+    "value": 0.694,
+    "display": "+69 bp",
     "context": "prior month +90 bp",
     "vote": "M"
    },
@@ -116,9 +116,9 @@
     "rule": "2.5% or above: Late. 0.5% or below: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/DFII10",
     "period": "November 2026 average",
-    "value": 2.6366666666666667,
-    "display": "2.64%",
-    "context": "nominal 10-year 4.92%",
+    "value": 2.6275,
+    "display": "2.63%",
+    "context": "nominal 10-year 4.90%",
     "vote": "L"
    },
    {
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-11-06"
+  "asOf": "2026-11-07"
  },
  "history": [
   {
@@ -2351,13 +2351,13 @@
   },
   {
    "m": "2026-09",
-   "pos": 50.0,
+   "pos": 48.0,
    "n": 11
   },
   {
    "m": "2026-10",
-   "pos": 45.6,
-   "n": 7
+   "pos": 44.3,
+   "n": 9
   },
   {
    "m": "2026-11",
