@@ -2,7 +2,7 @@
   "note": "Percentages and per-share prices only. Never store dollar amounts or share counts in this file: the repository is public.",
   "account": "Personal brokerage account",
   "snapshot": "2026-10-26",
-  "cash": 5.05,
+  "cash": 6.79,
   "positions": [
     {
       "ticker": "MO",
@@ -671,19 +671,6 @@
       "model": "models/holdings/TMC_Valuation.xlsx"
     },
     {
-      "ticker": "NBIS",
-      "weight": 2.71,
-      "snapPrice": 182.12,
-      "avgCost": 182.12,
-      "name": "Nebius Group",
-      "type": "Equity",
-      "opened": "2026-10-28",
-      "trade": true,
-      "sellAbove": 210,
-      "exitBelow": 165,
-      "exitPlan": "Short-term trade on an AI bounce, not a long-term holding. Sell the whole position at about $210, or get out if it breaks below $165."
-    },
-    {
       "ticker": "MDT",
       "weight": 1.77,
       "snapPrice": 95.01,
@@ -880,6 +867,15 @@
       "exitPrice": 249.63,
       "entry": "celestica-q3-2026",
       "note": "Sold the whole position at a loss. My view is that AI capex and the multiples on AI stocks will contract, from 30 to 40 times earnings toward 15 to 20."
+    },
+    {
+      "ticker": "NBIS",
+      "name": "Nebius Group",
+      "opened": "2026-10-28",
+      "closed": "2026-11-05",
+      "avgCost": 182.12,
+      "exitPrice": 117.35,
+      "note": "Short-term trade on an AI bounce that went the wrong way. Sold the whole position in the post-midterm AI selloff, below the $165 stop, after the stock gapped through it."
     }
   ],
   "trades": [
@@ -954,6 +950,15 @@
       "to": 2.44,
       "price": 139.88,
       "note": "A small long-term bet on SpaceX, partly a hedge against other holdings. No model or exit levels."
+    },
+    {
+      "date": "2026-11-05",
+      "action": "Sell all",
+      "ticker": "NBIS",
+      "from": 1.74,
+      "to": 0,
+      "price": 117.35,
+      "note": "Closed the trade in the post-midterm AI selloff. The stock fell through the $165 stop in one session, so the exit came well below it."
     }
   ],
   "targetsAsOf": "2026-10-23",
