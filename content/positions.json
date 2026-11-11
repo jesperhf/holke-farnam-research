@@ -469,7 +469,8 @@
         ]
       ],
       "requiredReturn": 0.1058,
-      "model": "models/holdings/NVDA_Valuation.xlsx"
+      "model": "models/holdings/NVDA_Valuation.xlsx",
+      "entry": "revisiting-nvidia"
     },
     {
       "ticker": "VGK",
