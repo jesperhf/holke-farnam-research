@@ -2,7 +2,7 @@
 title: CoreWeave after its Q3 rally, a better business on a thin equity
 slug: coreweave-after-q3
 written: 2026-11-11
-published: 2026-11-11
+published: 2026-11-12
 series: Company work-up
 summary: CoreWeave beat, raised its 2026 outlook and cut its cost of debt, and the stock rose about 25%. The business got better. The valuation did not: with $46.9 billion of debt under a $34 billion equity, my base case is worth about nothing at a 10% cost of capital, and today's price needs close to my bull case. Pass.
 tickers: [CRWV, NVDA]
