@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12T13:30+00:00",
+ "generated": "2026-11-12T15:07+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -43,8 +43,8 @@
     "series": "ICSA",
     "rule": "30% or more above its 52-week low: Contraction. 15% above: Late. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/ICSA",
-    "period": "week of Oct 31, 2026",
-    "value": 194750.0,
+    "period": "week of Nov 7, 2026",
+    "value": 195250.0,
     "display": "195k",
     "context": "0% above 52-week low of 195k",
     "vote": "M"
@@ -2361,8 +2361,8 @@
   },
   {
    "m": "2026-11",
-   "pos": 46.5,
-   "n": 6
+   "pos": 45.6,
+   "n": 7
   }
  ],
  "recessions": [
