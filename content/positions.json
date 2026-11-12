@@ -422,50 +422,50 @@
       "avgCost": 126.944,
       "name": "Nvidia",
       "type": "Equity",
-      "target": 175,
+      "target": 160,
       "exitPlan": "Sell if any hyperscaler guides 2027 capex flat or down, or if gross margin falls below 70%.",
-      "trimAbove": 250,
-      "exitBelow": 135,
+      "trimAbove": 235,
+      "exitBelow": 130,
       "valueCurve": [
         [
           0.05,
-          782.74
+          711.87
         ],
         [
           0.06,
-          474.37
+          432.8
         ],
         [
           0.07,
-          342.11
+          313.08
         ],
         [
           0.08,
-          268.56
+          246.48
         ],
         [
           0.09,
-          221.7
+          204.03
         ],
         [
           0.1,
-          189.22
+          174.58
         ],
         [
           0.11,
-          165.36
+          152.95
         ],
         [
           0.12,
-          147.09
+          136.37
         ],
         [
           0.13,
-          132.64
+          123.25
         ],
         [
           0.14,
-          120.92
+          112.6
         ]
       ],
       "requiredReturn": 0.1058,

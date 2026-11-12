@@ -396,6 +396,24 @@
       "sector": "AI accelerators",
       "published": "2026-11-11",
       "yahoo": "NVDA"
+    },
+    {
+      "id": "nvda-2026-11-12",
+      "name": "Nvidia",
+      "ticker": "NVDA",
+      "currency": "USD",
+      "price": 150.71,
+      "priceDate": "2026-11-12",
+      "bear": 99.15,
+      "base": 161.3,
+      "bull": 234.84,
+      "buyBelow": 135,
+      "stance": "Hold, add below $135",
+      "entry": "revisiting-nvidia",
+      "stooq": "nvda.us",
+      "sector": "AI accelerators",
+      "published": "2026-11-12",
+      "yahoo": "NVDA"
     }
   ]
 }
