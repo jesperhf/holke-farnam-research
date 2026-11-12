@@ -452,6 +452,20 @@ def money(v, ccy):
     return f"{sym}{v:,.2f}"
 
 
+def call_key(c):
+    return c["ticker"].split(" ")[0].upper()
+
+
+def latest_call_ids():
+    """The newest call per company; older rows stay on the scorecard as history."""
+    best = {}
+    for i, c in enumerate(CALLS):
+        k = call_key(c)
+        if k not in best or (c["published"], i) >= (best[k][0], best[k][1]):
+            best[k] = (c["published"], i, c["id"])
+    return {v[2] for v in best.values()}
+
+
 def rnd(v, ccy):
     return round(v, -3) if ccy == "KRW" else round(v)
 
@@ -467,7 +481,9 @@ def calls_table(rows, compact=False):
         since = f'<span class="{"pos" if lp >= c["price"] else "neg"}">{(lp / c["price"] - 1) * 100:+.1f}%</span>' if lp is not None else '<span class="muted">n/a</span>'
         gap = (c["buyBelow"] / ref - 1) * 100
         held_now = any(p["ticker"].upper() == c.get("yahoo", "").upper() or p["ticker"].upper() == c["ticker"].split(" ")[0].upper() for p in BOOK.get("positions", []))
-        if held_now:
+        if c["id"] not in LATEST_IDS:
+            status = '<span class="chip pass">Superseded</span>'
+        elif held_now:
             status = '<span class="chip hit">Held</span>'
         elif c["stance"].lower().startswith("pass"):
             status = '<span class="chip pass">Pass</span>'
@@ -508,6 +524,8 @@ def cycle_text():
 # ---------------------------------------------------------------- pages
 
 def build():
+    global LATEST_IDS
+    LATEST_IDS = latest_call_ids()
     if os.path.exists(OUT):
         shutil.rmtree(OUT)
     os.makedirs(OUT)
@@ -519,6 +537,14 @@ def build():
 
     ents = entries()
     latest = next((e for e in ents if e["slug"] == "the-ai-trade-in-a-late-cycle"), ents[0])
+
+    def revised_banner(e):
+        later = [c for c in CALLS if c.get("entry") == e["slug"] and c["published"] > e["published"]]
+        if not later:
+            return ""
+        c = max(later, key=lambda x: x["published"])
+        return (f'<div class="lock" style="border-color:var(--accent,#2b6cb0)"><span><b>Updated {long_date(c["published"])}:</b> '
+                f'{E(c["stance"])}. The stance above is as first published; the dated update at the end explains the change.</span></div>')
 
     # Journal entries
     for i, e in enumerate(ents):
@@ -534,7 +560,7 @@ def build():
         body = (f'<article style="display:grid;gap:34px"><header class="note-head"><div class="eyebrow">{E(e.get("series", "Journal"))}</div>'
                 f'<h1>{E(e["title"])}</h1><p class="lede">{E(e["summary"])}</p>'
                 f'<div class="meta"><span>Written {long_date(e["written"])}</span><span>Published {long_date(e["published"])}</span>{stance_chip(e.get("stance"))}</div>'
-                f'<div class="lock"><span>This entry is locked as written. Prices and figures are as of the dates in the text. Later thinking goes in the updates at the end.</span></div></header>'
+                f'<div class="lock"><span>This entry is locked as written. Prices and figures are as of the dates in the text. Later thinking goes in the updates at the end.</span></div>{revised_banner(e)}</header>'
                 f'<div class="prose">{md(e["body"], e["published"])}</div>{upd}{disclosure_html(e)}'
                 f'<nav class="pager" aria-label="More entries"><span>{pager_link(newer, "Newer")}</span><span>{pager_link(older, "Older")}</span></nav></article>')
         page(f'journal/{e["slug"]}.html', e["title"], body, "Journal", description=e["summary"])
@@ -554,7 +580,7 @@ def build():
 
     # Home
     lab, k, meta = cycle_text()
-    watch = [c for c in CALLS if not c["stance"].lower().startswith("pass")]
+    watch = [c for c in CALLS if c["id"] in LATEST_IDS and not c["stance"].lower().startswith("pass")]
     home = (
         f'<section class="hero"><div class="view"><div class="eyebrow">Current view · {short_date(latest["written"])}</div>'
         f'<h1><a href="journal/{latest["slug"]}.html">{E(latest["title"][0].upper() + latest["title"][1:])}</a></h1>'
