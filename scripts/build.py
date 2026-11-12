@@ -612,6 +612,7 @@ def build():
         ("Healthcare_DCF.xlsx", "Healthcare", "Abbott, Medtronic, Becton Dickinson and Merck. Ten-year DCFs with a five-year fade to terminal levels.", "healthcare-in-a-late-cycle"),
         ("UBER_Valuation.xlsx", "Uber", "Ten-year DCF on GAAP operating margins, with the robotaxi question as the bear and bull cases.", "uber-after-the-selloff"),
         ("NFLX_Valuation.xlsx", "Netflix", "Ten-year DCF with content spend treated as reinvestment.", "netflix-after-the-selloff"),
+        ("CRWV_Valuation.xlsx", "CoreWeave", "Ten-year DCF with capex less depreciation as reinvestment and net debt of $40.4B; base value is near zero at a 10% cost of capital.", "coreweave-after-q3"),
     ]
     cards = []
     for f, t, d, slug in models:
