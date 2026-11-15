@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T13:10+00:00",
+ "generated": "2026-11-15T13:12+00:00",
  "prices": {
   "tsm": {
    "price": 398.73,
@@ -188,7 +188,7 @@
    "source": "Yahoo Finance"
   },
   "pos:HYBL": {
-   "price": 27.2724,
+   "price": 27.272,
    "date": "2026-11-13",
    "time": "2026-11-13T20:59+00:00",
    "source": "Yahoo Finance"
