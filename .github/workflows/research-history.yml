@@ -21,6 +21,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add research/history
+          git add -f research/history/*.csv research/history/_report.json
           git commit -m "Research: daily price history" || echo "nothing to commit"
           git push
