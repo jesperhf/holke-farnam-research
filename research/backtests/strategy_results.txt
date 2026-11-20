@@ -1,0 +1,70 @@
+1. FACTOR PREMIA (long-short, gross of costs), mean annual return and t-stat, split at the year the factor was published
+  Market (Mkt-RF)        full 1926-2026:   8.3%/yr t= 4.5 | before 1964:  10.3% t= 2.8 | 1964 on:   7.1% t= 3.7
+  Size (SMB)             full 1926-2026:   2.0%/yr t= 1.8 | before 1981:   3.4% t= 2.2 | 1981 on:   0.2% t= 0.2
+  Value (HML)            full 1926-2026:   4.2%/yr t= 3.4 | before 1992:   5.0% t= 3.2 | 1992 on:   2.7% t= 1.4
+  Momentum (UMD)         full 1927-2026:   7.4%/yr t= 4.6 | before 1993:   8.7% t= 4.4 | 1993 on:   5.0% t= 1.7
+  Profitability (RMW)    full 1963-2026:   3.0%/yr t= 3.0 | before 2013:   3.3% t= 3.0 | 2013 on:   1.6% t= 0.7
+  Investment (CMA)       full 1963-2026:   2.9%/yr t= 3.3 | before 2015:   3.8% t= 3.9 | 2015 on:  -0.8% t=-0.3
+  Correlation value vs momentum: -0.19; value vs profitability: 0.10; momentum vs profitability: 0.05
+  Sharpe Value (HML)            0.34
+  Sharpe Momentum (UMD)         0.50
+  Sharpe Profitability (RMW)    0.37
+  Sharpe equal mix of value, momentum, profitability, investment: 0.74 (1963 on)
+    mix 1963-1999:  5.0%/yr, Sharpe 1.21
+    mix 2000-2026:  3.0%/yr, Sharpe 0.42
+  Worst 12 months for the mix: -19.0%
+  Market (Mkt-RF)        share of rolling 10-year periods with a negative premium: 7%
+  Size (SMB)             share of rolling 10-year periods with a negative premium: 32%
+  Value (HML)            share of rolling 10-year periods with a negative premium: 13%
+  Momentum (UMD)         share of rolling 10-year periods with a negative premium: 9%
+  Profitability (RMW)    share of rolling 10-year periods with a negative premium: 10%
+  Investment (CMA)       share of rolling 10-year periods with a negative premium: 10%
+
+2. TREND FOLLOWING, US stock market: hold stocks when the market index is above its 10-month average, else T-bills
+  Trend, Full                                  1927-2026  CAGR   9.6%  vol  12.5%  Sharpe  0.54  maxDD  -43.1%
+  Buy and hold, Full                           1927-2026  CAGR  10.2%  vol  18.4%  Sharpe  0.45  maxDD  -83.7%
+  Trend, Before publication (to 2006)          1927-2006  CAGR   9.7%  vol  12.9%  Sharpe  0.50  maxDD  -43.1%
+  Buy and hold, Before publication (to 2006)   1927-2006  CAGR  10.0%  vol  19.0%  Sharpe  0.41  maxDD  -83.7%
+  Trend, Since Faber 2007                      2007-2026  CAGR   9.3%  vol  10.8%  Sharpe  0.74  maxDD  -18.1%
+  Buy and hold, Since Faber 2007               2007-2026  CAGR  11.0%  vol  15.8%  Sharpe  0.65  maxDD  -50.3%
+  Trend, Post-1950                             1950-2026  CAGR  10.6%  vol  11.3%  Sharpe  0.60  maxDD  -24.5%
+  Buy and hold, Post-1950                      1950-2026  CAGR  11.7%  vol  14.9%  Sharpe  0.55  maxDD  -50.3%
+  Months in stocks: 73%; switches per year: 1.5
+    1929-32 crash  trend  -19.9%   buy-and-hold  -83.7%
+    2000-02 bear   trend   -8.2%   buy-and-hold  -45.0%
+    2008 crisis    trend   -1.6%   buy-and-hold  -49.3%
+    COVID crash    trend   -8.0%   buy-and-hold  -20.2%
+    2022           trend   -5.7%   buy-and-hold  -24.8%
+    Missed upside, years trend trailed buy-and-hold by 10+ points: 17
+
+3. INDUSTRY MOMENTUM, 49 Fama-French industries (value-weighted), monthly, long-only top or bottom 5
+  Equal weight, all 49 industries              1927-2026  CAGR  10.9%  vol  20.4%  Sharpe  0.45  maxDD  -85.3%
+  US market                                    1927-2026  CAGR  10.2%  vol  18.4%  Sharpe  0.44  maxDD  -83.7%
+  Top 5 by 12-1 momentum                       1927-2026  CAGR  16.1%  vol  22.5%  Sharpe  0.64  maxDD  -70.1%
+  Bottom 5 by 12-1 (reversal)                  1927-2026  CAGR   2.8%  vol  28.6%  Sharpe  0.12  maxDD  -93.3%
+  Top 5 by 1-month return                      1927-2026  CAGR  10.4%  vol  22.4%  Sharpe  0.41  maxDD  -86.4%
+  Bottom 5 by 1-month return                   1927-2026  CAGR   4.0%  vol  26.7%  Sharpe  0.15  maxDD  -93.2%
+    Top 5 momentum minus equal weight, 1927-1998: +5.4%/yr, t=4.1
+    Top 5 momentum minus equal weight, 1999-2026: +4.3%/yr, t=1.5
+
+4. MULTI-ASSET STRATEGIES WITH ETFs (daily data to Nov 18, 2026; monthly decisions)
+  SPY                                          2007-2026  CAGR  10.7%  vol  15.4%  Sharpe  0.66  maxDD  -50.8%
+  60% SPY / 40% AGG, monthly rebalance         2007-2026  CAGR   7.8%  vol   9.9%  Sharpe  0.67  maxDD  -32.3%
+  Dual momentum (SPY/EFA/AGG)                  2007-2026  CAGR   6.7%  vol  12.3%  Sharpe  0.49  maxDD  -25.7%
+  Equal weight 5 assets, no trend rule         2007-2026  CAGR   6.5%  vol  10.4%  Sharpe  0.55  maxDD  -31.1%
+  Equal weight 5 assets with 10-month trend rule 2007-2026  CAGR   5.6%  vol   6.4%  Sharpe  0.69  maxDD  -11.7%
+
+5. VOLATILITY TARGETING, SPY 1993 to 2026: exposure = 15% / last month's realized volatility, capped at 100% (rest in T-bills)
+  SPY buy and hold                             1993-2026  CAGR  10.7%  vol  14.8%  Sharpe  0.61  maxDD  -50.8%
+  SPY volatility-targeted                      1993-2026  CAGR   9.8%  vol  11.6%  Sharpe  0.67  maxDD  -35.5%
+  Average exposure 88%
+
+6. LONG-ONLY FACTOR ETFs, Jan 2014 to Nov 2026 (what an investor could actually buy)
+  S&P 500 (SPY)                                2014-2026  CAGR  13.1%  vol  14.5%  Sharpe  0.83  maxDD  -23.9%
+  Momentum (MTUM)                              2014-2026  CAGR  13.3%  vol  17.3%  Sharpe  0.82  maxDD  -30.2%
+  Quality (QUAL)                               2014-2026  CAGR  12.6%  vol  14.6%  Sharpe  0.78  maxDD  -27.8%
+  Minimum volatility (USMV)                    2014-2026  CAGR  10.4%  vol  11.6%  Sharpe  0.74  maxDD  -19.1%
+  Value (VLUE)                                 2014-2026  CAGR  11.6%  vol  18.0%  Sharpe  0.65  maxDD  -29.0%
+  Russell 1000 Value (IWD)                     2014-2026  CAGR  10.4%  vol  14.6%  Sharpe  0.61  maxDD  -26.7%
+  Russell 1000 Growth (IWF)                    2014-2026  CAGR  14.6%  vol  16.8%  Sharpe  0.86  maxDD  -30.7%
+  Russell 2000 (small) (IWM)                   2014-2026  CAGR   8.2%  vol  19.7%  Sharpe  0.42  maxDD  -32.3%
