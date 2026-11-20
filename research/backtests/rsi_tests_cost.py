@@ -4,7 +4,7 @@ Exits fixed in advance: RSI(14) rules exit when RSI(14) rises above 50 or after 
 close is above its 5-day simple average (his published rule) or after 10 days.
 """
 import os, numpy as np, pandas as pd
-Q = os.path.dirname(os.path.abspath(__file__)); M = os.path.join(os.path.dirname(os.path.dirname(Q)), "history")
+Q = os.path.dirname(os.path.abspath(__file__)); M = os.path.join(os.path.dirname(Q), "history")
 import sys
 COST = float(sys.argv[1]) if len(sys.argv) > 1 else 0.001
 IND = ["XLK", "XLV", "XLF", "XLE", "XLI", "XLY", "XLP", "XLU", "XLB", "XLRE", "XLC", "SMH", "IGV", "GRID", "XBI", "IHI", "IHF",

@@ -5,7 +5,7 @@ An opposite cross also opens the new position. Flat days earn T-bills. Costs 0.0
 Daily closes only (no intraday fills), so take-profits fill at the close that crosses the level.
 """
 import os, sys, numpy as np, pandas as pd
-Q = os.path.dirname(os.path.abspath(__file__)); M = os.path.join(os.path.dirname(os.path.dirname(Q)), "history")
+Q = os.path.dirname(os.path.abspath(__file__)); M = os.path.join(os.path.dirname(Q), "history")
 COST = 0.0002
 IND = ["XLK", "XLV", "XLF", "XLE", "XLI", "XLY", "XLP", "XLU", "XLB", "XLRE", "XLC", "SMH", "IGV", "GRID", "XBI", "IHI", "IHF",
        "XOP", "AMLP", "XME", "KRE", "ITA", "IYT", "ITB", "XRT"]
