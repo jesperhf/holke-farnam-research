@@ -17,5 +17,14 @@ for s in SYMS:
         out["quotes"][s]["close_2025"] = y[-1] if y else None
     except Exception as e:
         out["quotes"][s] = {"error": str(e)}
+    try:
+        req = urllib.request.Request(f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(s)}?range=1d&interval=1m&includePrePost=true",
+                                     headers={"User-Agent": "Mozilla/5.0 (research script)"})
+        m = json.loads(urllib.request.urlopen(req, timeout=30).read())["chart"]["result"][0]
+        pts = [(t, c) for t, c in zip(m.get("timestamp", []), m["indicators"]["quote"][0]["close"]) if c is not None]
+        if pts:
+            out["quotes"][s]["last_extended"] = pts[-1][1]; out["quotes"][s]["last_extended_time"] = pts[-1][0]
+    except Exception as e:
+        out["quotes"][s]["ext_error"] = str(e)
     time.sleep(0.5)
 json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "quotes.json"), "w"), indent=1)
