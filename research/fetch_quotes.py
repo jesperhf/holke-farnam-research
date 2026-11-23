@@ -1,7 +1,8 @@
 """Intraday quotes for the AI valuation revisit. Runs in GitHub Actions; writes research/quotes.json."""
 import json, os, time, urllib.parse, urllib.request
 SYMS = ["NVDA", "AMD", "AVGO", "MU", "TSM", "ASML", "AMAT", "VRT", "NVT", "FN", "COHR", "STX", "WDC", "000660.KS", "ENR.DE",
-        "CLS", "GOOG", "NOW", "CRWV", "NBIS", "MSFT", "META", "AMZN", "ORCL", "ANET", "SPY", "QQQ", "SMH", "^GSPC", "^IXIC", "ANT"]
+        "CLS", "GOOG", "NOW", "CRWV", "NBIS", "MSFT", "META", "AMZN", "ORCL", "ANET", "SPY", "QQQ", "SMH", "^GSPC", "^IXIC", "ANT",
+        "MO", "KO", "JCPI", "UNH", "LNG", "EPD", "HYBL", "VGK", "BAC", "JPM", "XBI", "FSLR", "TMC", "MDT", "UBER", "ABT", "SPCX"]
 out = {"generated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "quotes": {}}
 for s in SYMS:
     try:
