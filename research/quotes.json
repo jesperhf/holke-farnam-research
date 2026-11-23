@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T14:27:51Z",
+ "generated": "2026-11-23T14:29:01Z",
  "quotes": {
   "NVDA": {
    "price": 125.53,
@@ -9,7 +9,9 @@
    "low52": 125.52999877929688,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 186.5
+   "close_2025": 186.5,
+   "last_extended": 168.9,
+   "last_extended_time": 1795444136
   },
   "AMD": {
    "price": 424.39,
@@ -19,7 +21,9 @@
    "low52": 190.9499969482422,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 214.16000366210938
+   "close_2025": 214.16000366210938,
+   "last_extended": 480.26,
+   "last_extended_time": 1795444132
   },
   "AVGO": {
    "price": 304.41,
@@ -29,7 +33,9 @@
    "low52": 291.5299987792969,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 346.1000061035156
+   "close_2025": 346.1000061035156,
+   "last_extended": 321.52,
+   "last_extended_time": 1795444142
   },
   "MU": {
    "price": 594.51,
@@ -39,7 +45,9 @@
    "low52": 207.3699951171875,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 285.4100036621094
+   "close_2025": 285.4100036621094,
+   "last_extended": 698.2801,
+   "last_extended_time": 1795444142
   },
   "TSM": {
    "price": 318.71,
@@ -49,7 +57,9 @@
    "low52": 275.05999755859375,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 303.8900146484375
+   "close_2025": 303.8900146484375,
+   "last_extended": 385.65,
+   "last_extended_time": 1795444143
   },
   "ASML": {
    "price": 1266.22,
@@ -59,7 +69,9 @@
    "low52": 966.5700073242188,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 1069.8599853515625
+   "close_2025": 1069.8599853515625,
+   "last_extended": 1403.94,
+   "last_extended_time": 1795444139
   },
   "AMAT": {
    "price": 302.63,
@@ -69,7 +81,9 @@
    "low52": 224.00999450683594,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 256.989990234375
+   "close_2025": 256.989990234375,
+   "last_extended": 353.99,
+   "last_extended_time": 1795444141
   },
   "VRT": {
    "price": 166.24,
@@ -79,7 +93,9 @@
    "low52": 149.8300018310547,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 162.00999450683594
+   "close_2025": 162.00999450683594,
+   "last_extended": 199.02,
+   "last_extended_time": 1795444127
   },
   "NVT": {
    "price": 101.84,
@@ -89,7 +105,9 @@
    "low52": 94.98999786376953,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 101.97000122070312
+   "close_2025": 101.97000122070312,
+   "last_extended": 114.02,
+   "last_extended_time": 1795443992
   },
   "FN": {
    "price": 285.04,
@@ -99,7 +117,9 @@
    "low52": 285.0400085449219,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 455.2799987792969
+   "close_2025": 455.2799987792969,
+   "last_extended": 329.25,
+   "last_extended_time": 1795444129
   },
   "COHR": {
    "price": 187.22,
@@ -109,7 +129,9 @@
    "low52": 139.50999450683594,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 184.57000732421875
+   "close_2025": 184.57000732421875,
+   "last_extended": 232.0,
+   "last_extended_time": 1795444146
   },
   "STX": {
    "price": 457.01,
@@ -119,7 +141,9 @@
    "low52": 237.49000549316406,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 275.3900146484375
+   "close_2025": 275.3900146484375,
+   "last_extended": 554.53,
+   "last_extended_time": 1795444145
   },
   "WDC": {
    "price": 261.11,
@@ -129,7 +153,9 @@
    "low52": 139.19000244140625,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 172.27000427246094
+   "close_2025": 172.27000427246094,
+   "last_extended": 308.97,
+   "last_extended_time": 1795444145
   },
   "000660.KS": {
    "price": 1085000.0,
@@ -139,17 +165,21 @@
    "low52": 519000.0,
    "ytd_start": null,
    "currency": "KRW",
-   "close_2025": 651000.0
+   "close_2025": 651000.0,
+   "last_extended": 1085000.0,
+   "last_extended_time": 1795413600
   },
   "ENR.DE": {
-   "price": 125.92,
+   "price": 126.65,
    "prev": 100.8,
-   "time": 1795443179,
+   "time": 1795443250,
    "high52": 187.6199951171875,
    "low52": 106.44999694824219,
    "ytd_start": null,
    "currency": "EUR",
-   "close_2025": 120.4000015258789
+   "close_2025": 120.4000015258789,
+   "last_extended": 126.6500015258789,
+   "last_extended_time": 1795443250
   },
   "CLS": {
    "price": 201.8,
@@ -159,7 +189,9 @@
    "low52": 201.8000030517578,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 295.6099853515625
+   "close_2025": 295.6099853515625,
+   "last_extended": 233.41,
+   "last_extended_time": 1795444053
   },
   "GOOG": {
    "price": 264.0,
@@ -169,7 +201,9 @@
    "low52": 264.0,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 313.79998779296875
+   "close_2025": 313.79998779296875,
+   "last_extended": 282.52,
+   "last_extended_time": 1795444148
   },
   "NOW": {
    "price": 87.61,
@@ -179,7 +213,9 @@
    "low52": 83.0,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 153.19000244140625
+   "close_2025": 153.19000244140625,
+   "last_extended": 91.93,
+   "last_extended_time": 1795444130
   },
   "CRWV": {
    "price": 39.51,
@@ -189,7 +225,9 @@
    "low52": 39.5099983215332,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 71.61000061035156
+   "close_2025": 71.61000061035156,
+   "last_extended": 51.6,
+   "last_extended_time": 1795444152
   },
   "NBIS": {
    "price": 81.31,
@@ -199,7 +237,9 @@
    "low52": 73.87000274658203,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 83.70500183105469
+   "close_2025": 83.70500183105469,
+   "last_extended": 110.03,
+   "last_extended_time": 1795444150
   },
   "MSFT": {
    "price": 484.52,
@@ -209,7 +249,9 @@
    "low52": 352.8299865722656,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 483.6199951171875
+   "close_2025": 483.6199951171875,
+   "last_extended": 506.06,
+   "last_extended_time": 1795444134
   },
   "META": {
    "price": 560.84,
@@ -219,7 +261,9 @@
    "low52": 525.719970703125,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 660.0900268554688
+   "close_2025": 660.0900268554688,
+   "last_extended": 592.48,
+   "last_extended_time": 1795444154
   },
   "AMZN": {
    "price": 246.82,
@@ -229,7 +273,9 @@
    "low52": 198.7899932861328,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 230.82000732421875
+   "close_2025": 230.82000732421875,
+   "last_extended": 260.07,
+   "last_extended_time": 1795444154
   },
   "ORCL": {
    "price": 101.19,
@@ -239,7 +285,9 @@
    "low52": 101.19000244140625,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 194.91000366210938
+   "close_2025": 194.91000366210938,
+   "last_extended": 117.98,
+   "last_extended_time": 1795444155
   },
   "ANET": {
    "price": 167.62,
@@ -249,7 +297,9 @@
    "low52": 116.12999725341797,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 131.02999877929688
+   "close_2025": 131.02999877929688,
+   "last_extended": 185.95,
+   "last_extended_time": 1795444154
   },
   "SPY": {
    "price": 689.81,
@@ -259,7 +309,9 @@
    "low52": 631.969970703125,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 681.9199829101562
+   "close_2025": 681.9199829101562,
+   "last_extended": 724.18,
+   "last_extended_time": 1795444155
   },
   "QQQ": {
    "price": 608.45,
@@ -269,7 +321,9 @@
    "low52": 558.280029296875,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 614.3099975585938
+   "close_2025": 614.3099975585938,
+   "last_extended": 656.28,
+   "last_extended_time": 1795444157
   },
   "SMH": {
    "price": 400.06,
@@ -279,7 +333,9 @@
    "low52": 326.1300048828125,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 360.1300048828125
+   "close_2025": 360.1300048828125,
+   "last_extended": 469.17,
+   "last_extended_time": 1795444156
   },
   "^GSPC": {
    "price": 6910.39,
@@ -289,7 +345,9 @@
    "low52": 6343.72021484375,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 6845.5
+   "close_2025": 6845.5,
+   "last_extended": 6910.39013671875,
+   "last_extended_time": 1795208400
   },
   "^IXIC": {
    "price": 22617.732,
@@ -299,7 +357,9 @@
    "low52": 20794.640625,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": 23241.990234375
+   "close_2025": 23241.990234375,
+   "last_extended": 22617.732421875,
+   "last_extended_time": 1795208400
   },
   "ANT": {
    "price": 88.91,
@@ -309,7 +369,9 @@
    "low52": 88.91000366210938,
    "ytd_start": null,
    "currency": "USD",
-   "close_2025": null
+   "close_2025": null,
+   "last_extended": 93.33,
+   "last_extended_time": 1795444160
   }
  }
 }
