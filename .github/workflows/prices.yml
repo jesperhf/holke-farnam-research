@@ -1,14 +1,18 @@
 name: Refresh prices during market hours
 
+# GitHub drops many runs of frequent schedules, so each run queues the next one itself
+# (about every 15 minutes) until the close. The schedule below only restarts the chain
+# if it stops, and starts it each morning.
 on:
   schedule:
-    - cron: "*/15 13-21 * * 1-5"   # every 15 minutes, about 8 am to 4 pm Central, weekdays
+    - cron: "*/30 13-21 * * 1-5"   # backstop, about 8 am to 4 pm Central, weekdays
   workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: pages
@@ -41,3 +45,26 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+  next:
+    # Queue the next refresh unless one is already waiting. Runs even if this refresh failed.
+    needs: deploy
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Wait, then queue the next refresh during market hours
+        run: |
+          in_hours() {
+            dow=$(TZ=America/Chicago date +%u); hm=$(TZ=America/Chicago date +%H%M)
+            [ "$dow" -le 5 ] && [ "$hm" -ge 0815 ] && [ "$hm" -le 1520 ]
+          }
+          if ! in_hours; then echo "Outside market hours; chain stops here."; exit 0; fi
+          sleep 720
+          if ! in_hours; then echo "Market closed while waiting; chain stops here."; exit 0; fi
+          waiting=$(gh run list --workflow prices.yml --json databaseId,status \
+            -q "[.[] | select(.databaseId != ${{ github.run_id }}) | select(.status == \"queued\" or .status == \"pending\" or .status == \"waiting\" or .status == \"in_progress\")] | length")
+          if [ "$waiting" -gt 0 ]; then echo "Another refresh is already queued; not adding one."; exit 0; fi
+          gh workflow run prices.yml --ref main
+          echo "Queued the next refresh."
