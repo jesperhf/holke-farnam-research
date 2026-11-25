@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T21:18+00:00",
+ "generated": "2026-11-25T21:45+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -116,7 +116,7 @@
     "rule": "2.5% or above: Late. 0.5% or below: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/DFII10",
     "period": "November 2026 average",
-    "value": 2.765333333333333,
+    "value": 2.766875,
     "display": "2.77%",
     "context": "nominal 10-year 4.98%",
     "vote": "L"
