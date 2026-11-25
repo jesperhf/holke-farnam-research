@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T22:31+00:00",
+ "generated": "2026-11-25T21:18+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -43,10 +43,10 @@
     "series": "ICSA",
     "rule": "30% or more above its 52-week low: Contraction. 15% above: Late. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/ICSA",
-    "period": "week of Nov 14, 2026",
-    "value": 197750.0,
-    "display": "198k",
-    "context": "1% above 52-week low of 195k",
+    "period": "week of Nov 21, 2026",
+    "value": 196000.0,
+    "display": "196k",
+    "context": "0% above 52-week low of 195k",
     "vote": "M"
    },
    {
@@ -104,8 +104,8 @@
     "rule": "Below 0: Contraction. Below 1%: Late. Below 3%: Mid. Otherwise Early.",
     "url": "https://fred.stlouisfed.org/series/A191RL1Q225SBEA",
     "period": "Q3 2026",
-    "value": 3.4,
-    "display": "3.4%",
+    "value": 4.3,
+    "display": "4.3%",
     "context": "latest quarter",
     "vote": "E"
    },
@@ -128,9 +128,9 @@
     "rule": "Up 40% or more: Late. Down 30% or more: Contraction. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
     "period": "November 2026 average",
-    "value": 50.45247686672831,
-    "display": "+50%",
-    "context": "monthly average $96",
+    "value": 48.96698996541418,
+    "display": "+49%",
+    "context": "monthly average $95",
     "vote": "L"
    },
    {
@@ -139,14 +139,14 @@
     "series": "CP",
     "rule": "Below 0: Contraction. Below 5%: Late. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/CP",
-    "period": "Q2 2026",
-    "value": 26.60883594773582,
-    "display": "+26.6%",
+    "period": "Q3 2026",
+    "value": 23.08144590447574,
+    "display": "+23.1%",
     "context": "latest quarter",
     "vote": "M"
    }
   ],
-  "asOf": "2026-11-24"
+  "asOf": "2026-11-25"
  },
  "history": [
   {
