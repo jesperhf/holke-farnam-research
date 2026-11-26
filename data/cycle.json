@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T21:45+00:00",
+ "generated": "2026-11-26T21:39+00:00",
  "seed": false,
  "source": "Federal Reserve Bank of St. Louis (FRED)",
  "latest": {
@@ -92,8 +92,8 @@
     "rule": "Inverted: Late. Positive but inverted at some point in the past 6 months: Contraction. Above +150 bp: Early. Otherwise Mid.",
     "url": "https://fred.stlouisfed.org/series/T10Y3M",
     "period": "November 2026 average",
-    "value": 0.6925,
-    "display": "+69 bp",
+    "value": 0.6817647058823529,
+    "display": "+68 bp",
     "context": "prior month +90 bp",
     "vote": "M"
    },
@@ -146,7 +146,7 @@
     "vote": "M"
    }
   ],
-  "asOf": "2026-11-25"
+  "asOf": "2026-11-26"
  },
  "history": [
   {
